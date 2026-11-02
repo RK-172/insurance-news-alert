@@ -1,5 +1,8 @@
 name: Insurance news monitor
 on:
+  push:
+    paths:
+      - '.github/workflows/monitor.yml'
   schedule:
     - cron: '7,22,37,52 * * * *'
   workflow_dispatch:

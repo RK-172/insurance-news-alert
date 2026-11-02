@@ -1,0 +1,62 @@
+name: Insurance news monitor
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'collect = 수집 / test = 텔레그램 연결 시험'
+        default: collect
+        type: choice
+        options: [collect, test]
+permissions:
+  contents: write
+concurrency:
+  group: insurance-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Check notification configuration
+        id: config
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo '설정 대기: Secrets에 TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID를 등록하세요. 아직 알림이 활성화되지 않았습니다.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Run monitor
+        if: steps.config.outputs.ready == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          if [ "$MODE" = test ]; then
+            python monitor.py --test-message
+          else
+            python monitor.py
+          fi
+      - name: Persist delivery state even after partial failure
+        if: always() && steps.config.outputs.ready == 'true'
+        run: |
+          if [ -f state.json ]; then
+            git config user.name 'insurance-alert-bot'
+            git config user.email 'insurance-alert-bot@users.noreply.github.com'
+            git add state.json
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record collection health and notification state'
+              git push
+            fi
+          fi

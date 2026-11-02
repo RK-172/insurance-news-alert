@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-02T08:34:57.947978+00:00",
+      "last_success": "2026-11-02T09:37:32.584694+00:00",
       "count": 30
     },
     "fsc_press": {
-      "last_success": "2026-11-02T08:34:58.844802+00:00",
+      "last_success": "2026-11-02T09:37:33.402600+00:00",
       "count": 30
     },
     "fsc_rules": {
-      "last_success": "2026-11-02T08:34:58.775029+00:00",
+      "last_success": "2026-11-02T09:37:32.970877+00:00",
       "count": 30
     },
     "fss_sanction": {
-      "last_success": "2026-11-02T08:35:09.021269+00:00",
+      "last_success": "2026-11-02T09:37:39.910752+00:00",
       "count": 30
     },
     "fss_press": {
-      "last_success": "2026-11-02T08:35:05.784273+00:00",
+      "last_success": "2026-11-02T09:37:39.194199+00:00",
       "count": 30
     },
     "fss_explain": {
-      "last_success": "2026-11-02T08:35:06.450848+00:00",
+      "last_success": "2026-11-02T09:37:39.494951+00:00",
       "count": 30
     },
     "fss_rules": {
-      "last_success": "2026-11-02T08:35:13.936148+00:00",
+      "last_success": "2026-11-02T09:37:46.415245+00:00",
       "count": 30
     }
   },
@@ -239,8 +239,9 @@
     "fss_rules:4445": "baseline",
     "fss_rules:4446": "baseline",
     "fss_rules:4447": "baseline",
-    "fss_rules:4466": "baseline"
+    "fss_rules:4466": "baseline",
+    "fss_rules:4485": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-02T08:35:13.937586+00:00"
+  "checked_at": "2026-11-02T09:37:46.416123+00:00"
 }

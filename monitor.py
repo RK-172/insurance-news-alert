@@ -14,7 +14,7 @@ SOURCES = [
  ('fss_sanction','금감원 검사결과·제재','https://www.fss.or.kr/fss/job/openInfo/list.do?menuNo=200476','sanction'),
  ('fss_rules','금감원 세칙 제·개정 예고','https://www.fss.or.kr/fss/job/lrgRegItnPrvntc/list.do?menuNo=200489','fss_rules'),
 ]
-KEYWORDS = ['보험','생명','손해보험','설계사','계리','지급여력','k-ics','킥스','ifrs17','csm','ga','퇴직연금','해약','금융소비자','소비자보호','소비자 보호','금융회사','내부통제','개인정보','개인 정보','신용정보','생산적 금융','국민성장펀드','금융보안','금융 보안','금융지주','금융복합','자본규제','판매수수료','판매 수수료','금융상품','실손','재보험']
+KEYWORDS = ['보험','생명','손해보험','설계사','계리','지급여력','k-ics','킥스','ifrs17','csm','ga','퇴직연금','해약','금융소비자','소비자보호','소비자 보호','금융회사','내부통제','개인정보','개인 정보','신용정보','생산적 금융','국민성장펀드','금융보안','금융 보안','금융지주','금융복합','자본규제','판매수수료','판매 수수료','금융상품','실손','재보험','예금자보호','금융산업의 구조개선','금융산업구조개선','금산법']
 
 def text(node): return ' '.join(node.text_content().split())
 def relevant(value):
@@ -26,8 +26,8 @@ def fetch(url):
         try:
             with urlopen(Request(url,headers={'User-Agent':'InsurancePolicyNotifier/1.0 (public documents; low frequency)'}),timeout=30) as r:
                 return r.read().decode('utf-8')
-        except Exception:
-            if attempt==2: raise RuntimeError('HTTP 요청 실패 (3회 시도)') from None
+        except Exception as exc:
+            if attempt==2: raise RuntimeError('HTTP 요청 실패 (3회 시도; '+type(exc).__name__+')') from None
             time.sleep(2**attempt)
 
 def parse_board(body, source):
@@ -91,6 +91,13 @@ def telegram(message):
 def save(state,path):
     tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(state,ensure_ascii=False,indent=2));tmp.replace(path)
 
+def needs_rules_backfill(item, state):
+    # Repair launch-day notices suppressed by initial baseline; sent entries never replay.
+    return (item['id'].startswith('fsc_rules:')
+            and state['seen'].get(item['id']) == 'baseline'
+            and item['date'] >= '2026-11-02'
+            and relevant(item['context']))
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--test-message',action='store_true'); args=p.parse_args()
     if args.test_message:
@@ -106,14 +113,20 @@ def main():
             try:
                 items=future.result(); fresh=key not in state['sources']
                 for item in reversed(items):
-                    if item['id'] in state['seen']: continue
+                    backfill = needs_rules_backfill(item, state)
+                    if item['id'] in state['seen'] and not backfill: continue
                     if fresh:
-                        if not args.dry_run: state['seen'][item['id']]='baseline'
-                        continue
+                        cutoff=(dt.datetime.now(dt.timezone.utc)-dt.timedelta(days=2)).date().isoformat()
+                        recent_rule=(key=='fsc_rules' and item['date']>=cutoff and relevant(item['context']))
+                        if not recent_rule:
+                            if not args.dry_run: state['seen'][item['id']]='baseline'
+                            continue
+                        backfill=True
                     try: matches=detail_relevant(item)
                     except Exception: matches=True # classification failure must not suppress alert
                     if matches:
-                        msg=f"[신규 자료 | {label}]\n{item['title']}\n등록일: {item['date'] or '원문 확인'}\n{item['url']}\n※ 키워드 기반 선별, 첨부파일 분석 제외"
+                        tag = '초기 누락 보완' if backfill else '신규 자료'
+                        msg=f"[{tag} | {label}]\n{item['title']}\n등록일: {item['date'] or '원문 확인'}\n{item['url']}\n※ 키워드 기반 선별, 첨부파일 분석 제외"
                         if args.dry_run: print(msg)
                         else: telegram(msg)
                     if not args.dry_run:
@@ -122,7 +135,7 @@ def main():
                     state['sources'][key]={'last_success':dt.datetime.now(dt.timezone.utc).isoformat(),'count':len(items)}
                     previous=state['errors'].pop(key,None)
                     if previous and previous.get('notified'):telegram(f'[수집 복구] {label}')
-                    if fresh: telegram(f'[감시 시작] {label}: 기존 {len(items)}건을 기준으로 저장했습니다. 이후 새 등록 자료부터 알립니다.')
+                    if fresh: telegram(f'[감시 시작] {label}: 기준 목록 {len(items)}건을 확인했습니다. 입법예고는 최근 2일 관련 자료도 확인하며 이후 신규 자료를 알립니다.')
                     save(state,path)
                 print(label+': '+str(len(items))+'건 읽음'+(' (최초 기준 저장 예정)' if fresh else ''))
             except Exception as e:

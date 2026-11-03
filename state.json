@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-03T07:46:34.863677+00:00",
+      "last_success": "2026-11-03T08:41:25.374330+00:00",
       "count": 30
     },
     "fsc_press": {
-      "last_success": "2026-11-03T07:46:34.986839+00:00",
+      "last_success": "2026-11-03T08:41:25.374811+00:00",
       "count": 30
     },
     "fsc_rules": {
-      "last_success": "2026-11-03T07:46:35.546395+00:00",
+      "last_success": "2026-11-03T08:41:25.375219+00:00",
       "count": 30
     },
     "fss_sanction": {
-      "last_success": "2026-11-03T07:46:42.628603+00:00",
+      "last_success": "2026-11-03T08:41:34.002463+00:00",
       "count": 30
     },
     "fss_press": {
-      "last_success": "2026-11-03T07:46:42.627797+00:00",
+      "last_success": "2026-11-03T08:41:33.477027+00:00",
       "count": 30
     },
     "fss_explain": {
-      "last_success": "2026-11-03T07:46:42.628187+00:00",
+      "last_success": "2026-11-03T08:41:33.434859+00:00",
       "count": 30
     },
     "fss_rules": {
-      "last_success": "2026-11-03T07:46:49.468876+00:00",
+      "last_success": "2026-11-03T08:41:42.413311+00:00",
       "count": 30
     }
   },
@@ -250,8 +250,9 @@
     "fss_press:249707": "filtered",
     "fss_press:249709": "sent",
     "fsc_press:88074": "filtered",
-    "fss_press:249713": "sent"
+    "fss_press:249713": "sent",
+    "fsc_explain:88077": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-03T07:46:49.469781+00:00"
+  "checked_at": "2026-11-03T08:41:42.414171+00:00"
 }

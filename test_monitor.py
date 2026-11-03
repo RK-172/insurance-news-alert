@@ -18,4 +18,19 @@ class Tests(unittest.TestCase):
    self.assertTrue(monitor.detail_relevant({'context':'새 소식','url':'unused'}))
  def test_keywords(self):
   self.assertTrue(monitor.relevant('GA 판매수수료'));self.assertFalse(monitor.relevant('legal discussion'))
+class RulesRegressionTests(unittest.TestCase):
+ def test_common_financial_laws(self):
+  for title in ['「예금자보호법」 일부개정법률안 입법예고','「금융산업의 구조개선에 관한 법률」 일부개정법률안 입법예고']:
+   self.assertTrue(monitor.relevant(title))
+ def test_launch_day_baseline_replayed_only_once(self):
+  item={'id':'fsc_rules:4188','date':'2026-11-02','context':'예금자보호법'}
+  state={'seen':{item['id']:'baseline'}}
+  self.assertTrue(monitor.needs_rules_backfill(item,state))
+  state['seen'][item['id']]='sent'
+  self.assertFalse(monitor.needs_rules_backfill(item,state))
+ def test_old_unrelated_and_other_sources_not_replayed(self):
+  for key,date,context in [('fsc_rules:1','2026-10-01','보험'),('fsc_rules:2','2026-11-02','한국산업은행법'),('fsc_press:3','2026-11-02','보험')]:
+   item={'id':key,'date':date,'context':context}
+   self.assertFalse(monitor.needs_rules_backfill(item,{'seen':{key:'baseline'}}))
 if __name__=='__main__':unittest.main()
+

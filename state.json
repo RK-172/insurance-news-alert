@@ -13,19 +13,19 @@
       "count": 30
     },
     "fss_sanction": {
-      "last_success": "2026-11-03T00:24:20.477755+00:00",
+      "last_success": "2026-11-03T01:42:36.564331+00:00",
       "count": 30
     },
     "fss_press": {
-      "last_success": "2026-11-03T00:24:20.001982+00:00",
+      "last_success": "2026-11-03T01:42:40.144568+00:00",
       "count": 30
     },
     "fss_explain": {
-      "last_success": "2026-11-03T00:24:20.397254+00:00",
+      "last_success": "2026-11-03T01:42:40.143163+00:00",
       "count": 30
     },
     "fss_rules": {
-      "last_success": "2026-11-03T00:24:28.575246+00:00",
+      "last_success": "2026-11-03T01:42:45.539549+00:00",
       "count": 30
     }
   },
@@ -240,8 +240,22 @@
     "fss_rules:4446": "baseline",
     "fss_rules:4447": "baseline",
     "fss_rules:4466": "baseline",
-    "fss_rules:4485": "sent"
+    "fss_rules:4485": "sent",
+    "fss_explain:249699": "sent"
   },
-  "errors": {},
-  "checked_at": "2026-11-03T00:24:28.576440+00:00"
+  "errors": {
+    "fsc_press": {
+      "count": 1,
+      "notified": false
+    },
+    "fsc_explain": {
+      "count": 1,
+      "notified": false
+    },
+    "fsc_rules": {
+      "count": 1,
+      "notified": false
+    }
+  },
+  "checked_at": "2026-11-03T01:42:45.540452+00:00"
 }

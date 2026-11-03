@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-03T00:24:11.705360+00:00",
+      "last_success": "2026-11-03T01:44:57.494066+00:00",
       "count": 30
     },
     "fsc_press": {
-      "last_success": "2026-11-03T00:24:12.509593+00:00",
+      "last_success": "2026-11-03T01:44:58.821387+00:00",
       "count": 30
     },
     "fsc_rules": {
-      "last_success": "2026-11-03T00:24:12.391616+00:00",
+      "last_success": "2026-11-03T01:44:58.820770+00:00",
       "count": 30
     },
     "fss_sanction": {
-      "last_success": "2026-11-03T01:42:36.564331+00:00",
+      "last_success": "2026-11-03T01:44:59.773878+00:00",
       "count": 30
     },
     "fss_press": {
-      "last_success": "2026-11-03T01:42:40.144568+00:00",
+      "last_success": "2026-11-03T01:44:58.821854+00:00",
       "count": 30
     },
     "fss_explain": {
-      "last_success": "2026-11-03T01:42:40.143163+00:00",
+      "last_success": "2026-11-03T01:44:59.797462+00:00",
       "count": 30
     },
     "fss_rules": {
-      "last_success": "2026-11-03T01:42:45.539549+00:00",
+      "last_success": "2026-11-03T01:45:04.625607+00:00",
       "count": 30
     }
   },
@@ -118,8 +118,8 @@
     "fsc_rules:4184": "baseline",
     "fsc_rules:4185": "baseline",
     "fsc_rules:4186": "baseline",
-    "fsc_rules:4187": "baseline",
-    "fsc_rules:4188": "baseline",
+    "fsc_rules:4187": "sent",
+    "fsc_rules:4188": "sent",
     "fss_sanction:202200260:1": "baseline",
     "fss_sanction:202200259:1": "baseline",
     "fss_sanction:202500019:2": "baseline",
@@ -241,21 +241,12 @@
     "fss_rules:4447": "baseline",
     "fss_rules:4466": "baseline",
     "fss_rules:4485": "sent",
-    "fss_explain:249699": "sent"
+    "fss_explain:249699": "sent",
+    "fsc_explain:88056": "filtered",
+    "fsc_explain:88057": "sent",
+    "fsc_explain:88059": "sent",
+    "fsc_explain:88060": "filtered"
   },
-  "errors": {
-    "fsc_press": {
-      "count": 1,
-      "notified": false
-    },
-    "fsc_explain": {
-      "count": 1,
-      "notified": false
-    },
-    "fsc_rules": {
-      "count": 1,
-      "notified": false
-    }
-  },
-  "checked_at": "2026-11-03T01:42:45.540452+00:00"
+  "errors": {},
+  "checked_at": "2026-11-03T01:45:04.626670+00:00"
 }

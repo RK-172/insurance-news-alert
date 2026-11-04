@@ -45,5 +45,22 @@ class MessageTests(unittest.TestCase):
   node=monitor.html.fromstring('<div><a href="/fss/cmmn/file/fileDown.do?fileSn=1">자료.pdf</a><a href="/fss/cmmn/file/fileDown.do?fileSn=1">중복.pdf</a><a href="/viewer">뷰어</a></div>')
   files=monitor.extract_attachments(node,'https://www.fss.or.kr')
   self.assertEqual(len(files),1);self.assertEqual(files[0]['name'],'자료.pdf')
+class SchedulingTests(unittest.TestCase):
+ def test_gate_uses_elapsed_time_not_rounded_clock(self):
+  now=monitor.dt.datetime(2026,11,4,7,0,tzinfo=monitor.dt.timezone.utc)
+  self.assertFalse(monitor.collection_due({'checked_at':'2026-11-04T06:46:00+00:00'},now))
+  self.assertTrue(monitor.collection_due({'checked_at':'2026-11-04T06:45:00+00:00'},now))
+ def test_failed_sources_retry_without_waiting(self):
+  now=monitor.dt.datetime(2026,11,4,7,0,tzinfo=monitor.dt.timezone.utc)
+  self.assertTrue(monitor.collection_due({'checked_at':now.isoformat(),'errors':{'fsc_press':{'count':1}}},now))
+ def test_missing_invalid_and_future_time_do_not_block(self):
+  now=monitor.dt.datetime(2026,11,4,7,0,tzinfo=monitor.dt.timezone.utc)
+  for value in [None,'bad','2026-11-04T07:01:00+00:00','2026-11-04T07:00:00']:
+   self.assertTrue(monitor.collection_due({'checked_at':value},now))
+ def test_pagination_stops_at_known_id_and_keeps_new(self):
+  old={'id':'fsc_press:old'};new={'id':'fsc_press:new'}
+  with patch.object(monitor,'fetch',return_value='unused') as fetch,patch.object(monitor,'parse_board',return_value=[new,old]):
+   rows=monitor.collect(monitor.SOURCES[0],known_ids={'fsc_press:old'})
+   self.assertEqual(rows,[new,old]);self.assertEqual(fetch.call_count,1)
 if __name__=='__main__':unittest.main()
 

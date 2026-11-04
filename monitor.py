@@ -30,6 +30,50 @@ def fetch(url):
             if attempt==2: raise RuntimeError('HTTP 요청 실패 (3회 시도; '+type(exc).__name__+')') from None
             time.sleep(2**attempt)
 
+DISPLAY_LABELS = {
+ 'fsc_press':'금융위원회 / 보도자료', 'fsc_explain':'금융위원회 / 보도설명자료',
+ 'fsc_rules':'금융위원회 / 입법예고·규정변경예고',
+ 'fss_press':'금융감독원 / 보도자료', 'fss_explain':'금융감독원 / 보도설명자료',
+ 'fss_sanction':'금융감독원 / 제재정보', 'fss_rules':'금융감독원 / 세칙 제·개정 예고',
+}
+
+def extract_attachments(node, base):
+    files=[]; seen=set()
+    for a in node.xpath('.//a[@href]'):
+        href=a.get('href',''); lower=href.lower()
+        if not href or lower.startswith(('javascript:','#')): continue
+        if any(k in lower for k in ['viewer','synap','fileview']): continue
+        is_download=any(k in lower for k in ['filedown','download','getfile','downfile'])
+        if not is_download: continue
+        url=urljoin(base,href)
+        if urlsplit(url).scheme!='https' or urlsplit(url).hostname not in ['www.fsc.go.kr','fsc.go.kr','www.fss.or.kr','fss.or.kr']:continue
+        name=text(a)
+        if not re.search(r'\.(pdf|hwpx?|docx?|xlsx?|pptx?|zip)',name,re.I):
+            parent=a.getparent()
+            candidate=text(parent) if parent is not None else ''
+            match=re.search(r'(.+?\.(?:pdf|hwpx?|docx?|xlsx?|pptx?|zip))',candidate,re.I)
+            name=match.group(1) if match else (a.get('title') or '첨부파일')
+        if url not in seen:
+            files.append({'name':name[:200],'url':url});seen.add(url)
+    return files
+
+def format_notification(item, attachments=None, attachment_error=False, backfill=False):
+    label=DISPLAY_LABELS.get(item['id'].split(':')[0],item['label'])
+    lines=[f'[{label}]',item['title'],item['url']]
+    files=attachments or []
+    if files:
+        lines.extend(['','첨부파일'])
+        for f in files:
+            addition=f"{f['name']}\n{f['url']}"
+            # Preserve complete links and reserve room for original-page fallback.
+            if len('\n'.join(lines))+len(addition)>3600:
+                lines.append('추가 첨부파일은 원문에서 확인해주세요.');break
+            lines.append(addition)
+    else:
+        lines.extend(['','첨부파일: 원문에서 확인' if attachment_error else '첨부파일: 없음'])
+    return '\n'.join(lines)
+
+
 def parse_board(body, source):
     key,label,base,kind=source
     doc=html.fromstring(body); result={}
@@ -57,7 +101,7 @@ def parse_board(body, source):
             clean={k:v[0] for k,v in query.items() if k in idkeys or k=='menuNo'}
             url=urljoin(base,urlsplit(href).path)+'?'+urlencode(clean)
         dates=re.findall(r'20\d{2}[-.]?\d{2}[-.]?\d{2}',rowtext)
-        result[key+':'+ident]={'id':key+':'+ident,'title':title,'url':url,'date':dates[0] if dates else '', 'label':label,'context':rowtext}
+        result[key+':'+ident]={'id':key+':'+ident,'title':title,'url':url,'date':dates[0] if dates else '', 'label':label,'context':rowtext,'attachments':extract_attachments(row,base)}
     if not result: raise RuntimeError('목록 게시물을 찾지 못함: 구조 변경 또는 차단 확인 필요')
     return list(result.values())
 
@@ -125,8 +169,11 @@ def main():
                     try: matches=detail_relevant(item)
                     except Exception: matches=True # classification failure must not suppress alert
                     if matches:
-                        tag = '초기 누락 보완' if backfill else '신규 자료'
-                        msg=f"[{tag} | {label}]\n{item['title']}\n등록일: {item['date'] or '원문 확인'}\n{item['url']}\n※ 키워드 기반 선별, 첨부파일 분석 제외"
+                        attachments=item.get('attachments',[]); attachment_error=False
+                        if not attachments:
+                            try: attachments=extract_attachments(html.fromstring(fetch(item['url'])),item['url'])
+                            except Exception: attachment_error=True
+                        msg=format_notification(item,attachments,attachment_error,backfill)
                         if args.dry_run: print(msg)
                         else: telegram(msg)
                     if not args.dry_run:

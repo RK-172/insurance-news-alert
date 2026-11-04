@@ -24,6 +24,8 @@ jobs:
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -63,6 +65,21 @@ jobs:
             git add state.json
             if ! git diff --cached --quiet; then
               git commit -m 'Record collection health and notification state'
-              git push
+              pushed=false
+              for attempt in 1 2 3; do
+                git fetch origin main
+                if ! git rebase origin/main; then
+                  git rebase --abort
+                  exit 1
+                fi
+                if git push origin HEAD:main; then
+                  pushed=true
+                  break
+                fi
+              done
+              if [ "$pushed" != true ]; then
+                echo '수집 기록 저장 재시도 실패'
+                exit 1
+              fi
             fi
           fi

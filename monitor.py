@@ -49,9 +49,11 @@ def extract_attachments(node, base):
         if urlsplit(url).scheme!='https' or urlsplit(url).hostname not in ['www.fsc.go.kr','fsc.go.kr','www.fss.or.kr','fss.or.kr']:continue
         name=text(a)
         if not re.search(r'\.(pdf|hwpx?|docx?|xlsx?|pptx?|zip)',name,re.I):
-            parent=a.getparent()
-            candidate=text(parent) if parent is not None else ''
-            match=re.search(r'(.+?\.(?:pdf|hwpx?|docx?|xlsx?|pptx?|zip))',candidate,re.I)
+            match=None
+            for parent in list(a.iterancestors())[:4]:
+                candidate=text(parent)
+                match=re.search(r'(.+?\.(?:pdf|hwpx?|docx?|xlsx?|pptx?|zip))',candidate,re.I)
+                if match: break
             name=match.group(1) if match else (a.get('title') or '첨부파일')
         if url not in seen:
             files.append({'name':name[:200],'url':url});seen.add(url)

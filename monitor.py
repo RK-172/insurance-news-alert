@@ -59,21 +59,9 @@ def extract_attachments(node, base):
             files.append({'name':name[:200],'url':url});seen.add(url)
     return files
 
-def format_notification(item, attachments=None, attachment_error=False, backfill=False):
+def format_notification(item):
     label=DISPLAY_LABELS.get(item['id'].split(':')[0],item['label'])
-    lines=[f'[{label}]',item['title'],item['url']]
-    files=attachments or []
-    if files:
-        lines.extend(['','첨부파일'])
-        for f in files:
-            addition=f"{f['name']}\n{f['url']}"
-            # Preserve complete links and reserve room for original-page fallback.
-            if len('\n'.join(lines))+len(addition)>3600:
-                lines.append('추가 첨부파일은 원문에서 확인해주세요.');break
-            lines.append(addition)
-    else:
-        lines.extend(['','첨부파일: 원문에서 확인' if attachment_error else '첨부파일: 없음'])
-    return '\n'.join(lines)
+    return '\n'.join([f'[{label}]',item['title'],item['url']])
 
 
 def parse_board(body, source):
@@ -191,11 +179,7 @@ def main():
                     try: matches=detail_relevant(item)
                     except Exception: matches=True # classification failure must not suppress alert
                     if matches:
-                        attachments=item.get('attachments',[]); attachment_error=False
-                        if not attachments:
-                            try: attachments=extract_attachments(html.fromstring(fetch(item['url'])),item['url'])
-                            except Exception: attachment_error=True
-                        msg=format_notification(item,attachments,attachment_error,backfill)
+                        msg=format_notification(item)
                         if args.dry_run: print(msg)
                         else:
                             telegram(msg)

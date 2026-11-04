@@ -107,12 +107,15 @@ def parse_board(body, source):
     if not result: raise RuntimeError('목록 게시물을 찾지 못함: 구조 변경 또는 차단 확인 필요')
     return list(result.values())
 
-def collect(source,pages=3):
+def collect(source,pages=3,known_ids=None):
     rows={}
     for page in range(1,pages+1):
         url=source[2]; param='curPage' if source[3].startswith('fsc') else 'pageIndex'
         url+=('&' if '?' in url else '?')+urlencode({param:page})
-        for item in parse_board(fetch(url),source): rows[item['id']]=item
+        page_items=parse_board(fetch(url),source)
+        for item in page_items: rows[item['id']]=item
+        # Once a known entry is reached, the preceding newest entries cover the gap.
+        if known_ids and any(item['id'] in known_ids for item in page_items): break
     return list(rows.values())
 
 def detail_relevant(item):
@@ -144,16 +147,33 @@ def needs_rules_backfill(item, state):
             and item['date'] >= '2026-11-02'
             and relevant(item['context']))
 
+def collection_due(state, now=None, minimum_seconds=900):
+    if state.get('errors'): return True
+    value=state.get('checked_at')
+    if not value: return True
+    try:
+        previous=dt.datetime.fromisoformat(value)
+        if previous.tzinfo is None: return True
+        elapsed=((now or dt.datetime.now(dt.timezone.utc))-previous).total_seconds()
+        return elapsed < 0 or elapsed >= minimum_seconds
+    except (ValueError,TypeError): return True
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--test-message',action='store_true'); args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--test-message',action='store_true');p.add_argument('--due-only',action='store_true'); args=p.parse_args()
     if args.test_message:
         telegram('보험정책 알림 연결 테스트입니다. 금융위·금감원 수집기 / 국회 수집은 별도 검증 필요.');return
     path=Path('state.json');state=json.loads(path.read_text()) if path.exists() else {'sources':{},'seen':{},'errors':{}}
     if not args.dry_run and not all(os.environ.get(k) for k in ['TELEGRAM_BOT_TOKEN','TELEGRAM_CHAT_ID']):
         raise SystemExit('설정 대기: TELEGRAM_BOT_TOKEN과 TELEGRAM_CHAT_ID를 Secrets에 등록하세요.')
+    if args.due_only and not collection_due(state):
+        print('최근 15분 이내 점검 완료: 중복 수집 생략');return
+    started=dt.datetime.now(dt.timezone.utc)
+    if not args.dry_run:
+        state['last_started_at']=started.isoformat()
+        save(state,path)
     failures=0
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
-        jobs={pool.submit(collect,s):s for s in SOURCES}
+        jobs={pool.submit(collect,s,3,set(state['seen'])):s for s in SOURCES}
         for future in concurrent.futures.as_completed(jobs):
             source=jobs[future];key,label=source[:2]
             try:
@@ -177,7 +197,9 @@ def main():
                             except Exception: attachment_error=True
                         msg=format_notification(item,attachments,attachment_error,backfill)
                         if args.dry_run: print(msg)
-                        else: telegram(msg)
+                        else:
+                            telegram(msg)
+                            state.setdefault('notifications',{})[item['id']]={'sent_at':dt.datetime.now(dt.timezone.utc).isoformat(),'title':item['title'],'url':item['url']}
                     if not args.dry_run:
                         state['seen'][item['id']]='sent' if matches else 'filtered';save(state,path)
                 if not args.dry_run:
@@ -197,6 +219,7 @@ def main():
                     save(state,path)
     print('국회 입법: 미연결 — 공식 수집 경로 검증 및 인증키 설정 필요')
     if not args.dry_run:
-        state['checked_at']=dt.datetime.now(dt.timezone.utc).isoformat();save(state,path)
+        state['checked_at']=started.isoformat()
+        state['finished_at']=dt.datetime.now(dt.timezone.utc).isoformat();save(state,path)
     if failures: raise SystemExit(1)
 if __name__=='__main__':main()

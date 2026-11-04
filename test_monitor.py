@@ -32,5 +32,18 @@ class RulesRegressionTests(unittest.TestCase):
   for key,date,context in [('fsc_rules:1','2026-10-01','보험'),('fsc_rules:2','2026-11-02','한국산업은행법'),('fsc_press:3','2026-11-02','보험')]:
    item={'id':key,'date':date,'context':context}
    self.assertFalse(monitor.needs_rules_backfill(item,{'seen':{key:'baseline'}}))
+class MessageTests(unittest.TestCase):
+ def item(self):return {'id':'fss_press:1','label':'금감원 보도자료','title':'퇴직연금 캠페인','url':'https://www.fss.or.kr/article'}
+ def test_clean_order_and_attachment_link(self):
+  message=monitor.format_notification(self.item(),[{'name':'자료.pdf','url':'https://www.fss.or.kr/file.pdf'}])
+  self.assertEqual(message,'[금융감독원 / 보도자료]\n퇴직연금 캠페인\nhttps://www.fss.or.kr/article\n\n첨부파일\n자료.pdf\nhttps://www.fss.or.kr/file.pdf')
+  self.assertNotIn('등록일',message);self.assertNotIn('※',message)
+ def test_attachment_failure_keeps_original(self):
+  message=monitor.format_notification(self.item(),[],True)
+  self.assertIn(self.item()['url'],message);self.assertIn('원문에서 확인',message)
+ def test_attachments_exclude_viewers_and_duplicates(self):
+  node=monitor.html.fromstring('<div><a href="/fss/cmmn/file/fileDown.do?fileSn=1">자료.pdf</a><a href="/fss/cmmn/file/fileDown.do?fileSn=1">중복.pdf</a><a href="/viewer">뷰어</a></div>')
+  files=monitor.extract_attachments(node,'https://www.fss.or.kr')
+  self.assertEqual(len(files),1);self.assertEqual(files[0]['name'],'자료.pdf')
 if __name__=='__main__':unittest.main()
 

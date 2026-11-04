@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-04T08:25:40.444319+00:00",
+      "last_success": "2026-11-04T09:25:04.974945+00:00",
       "count": 10
     },
     "fsc_press": {
-      "last_success": "2026-11-04T08:25:40.581045+00:00",
+      "last_success": "2026-11-04T09:25:07.553228+00:00",
       "count": 10
     },
     "fsc_rules": {
-      "last_success": "2026-11-04T08:25:40.640422+00:00",
+      "last_success": "2026-11-04T09:25:07.553573+00:00",
       "count": 10
     },
     "fss_sanction": {
-      "last_success": "2026-11-04T08:25:43.989610+00:00",
+      "last_success": "2026-11-04T09:25:10.263496+00:00",
       "count": 10
     },
     "fss_press": {
-      "last_success": "2026-11-04T08:25:43.600708+00:00",
+      "last_success": "2026-11-04T09:25:07.659720+00:00",
       "count": 10
     },
     "fss_explain": {
-      "last_success": "2026-11-04T08:25:43.651389+00:00",
+      "last_success": "2026-11-04T09:25:07.826682+00:00",
       "count": 10
     },
     "fss_rules": {
-      "last_success": "2026-11-04T08:25:46.483650+00:00",
+      "last_success": "2026-11-04T09:25:10.263858+00:00",
       "count": 10
     }
   },
@@ -257,11 +257,16 @@
     "fsc_press:88081": "sent",
     "fsc_press:88082": "sent",
     "fss_press:249734": "sent",
-    "fss_press:249736": "sent"
+    "fss_press:249736": "sent",
+    "fsc_press:88084": "filtered",
+    "fss_sanction:202400672:1": "sent",
+    "fss_sanction:202500058:1": "sent",
+    "fss_sanction:202500059:1": "sent",
+    "fss_sanction:202500363:1": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-04T08:25:37.506286+00:00",
-  "last_started_at": "2026-11-04T08:25:37.506286+00:00",
+  "checked_at": "2026-11-04T09:25:02.235662+00:00",
+  "last_started_at": "2026-11-04T09:25:02.235662+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -282,7 +287,27 @@
       "sent_at": "2026-11-04T07:11:54.723288+00:00",
       "title": "홍콩 H지수 ELS 관련 은행, 증권사 검사 결과 조치",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249736&menuNo=200218"
+    },
+    "fss_sanction:202400672:1": {
+      "sent_at": "2026-11-04T09:25:08.454758+00:00",
+      "title": "인카금융서비스㈜ / 20261026",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202400672&emOpenSeq=1"
+    },
+    "fss_sanction:202500058:1": {
+      "sent_at": "2026-11-04T09:25:09.023077+00:00",
+      "title": "아너스금융서비스 / 20261026",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500058&emOpenSeq=1"
+    },
+    "fss_sanction:202500059:1": {
+      "sent_at": "2026-11-04T09:25:09.638728+00:00",
+      "title": "한화라이프랩㈜ / 20261026",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500059&emOpenSeq=1"
+    },
+    "fss_sanction:202500363:1": {
+      "sent_at": "2026-11-04T09:25:10.262836+00:00",
+      "title": "케이에프지㈜ / 20261026",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500363&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-04T08:25:46.485681+00:00"
+  "finished_at": "2026-11-04T09:25:10.267077+00:00"
 }

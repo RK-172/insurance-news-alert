@@ -5,7 +5,7 @@ on:
       - '.github/workflows/monitor.yml'
       - 'monitor.py'
   schedule:
-    - cron: '7,22,37,52 * * * *'
+    - cron: '3-58/5 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -25,12 +25,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: pip install lxml==5.3.2
       - name: Regression tests
+        if: github.event_name != 'schedule'
         run: python -m unittest -v
       - name: Check notification configuration
         id: config
@@ -50,11 +52,14 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           MODE: ${{ inputs.mode }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           if [ "$MODE" = test ]; then
-            python monitor.py --test-message
+            python -u monitor.py --test-message
+          elif [ "$EVENT_NAME" = schedule ]; then
+            python -u monitor.py --due-only
           else
-            python monitor.py
+            python -u monitor.py
           fi
       - name: Persist delivery state even after partial failure
         if: always() && steps.config.outputs.ready == 'true'

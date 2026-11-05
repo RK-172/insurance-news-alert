@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-05T07:59:52.162802+00:00",
+      "last_success": "2026-11-05T08:56:53.995602+00:00",
       "count": 10
     },
     "fsc_press": {
-      "last_success": "2026-11-05T07:59:52.406403+00:00",
+      "last_success": "2026-11-05T08:56:54.115189+00:00",
       "count": 10
     },
     "fsc_rules": {
-      "last_success": "2026-11-05T07:59:52.653579+00:00",
+      "last_success": "2026-11-05T08:56:54.179605+00:00",
       "count": 10
     },
     "fss_sanction": {
-      "last_success": "2026-11-05T07:59:55.922912+00:00",
+      "last_success": "2026-11-05T08:56:57.308329+00:00",
       "count": 10
     },
     "fss_press": {
-      "last_success": "2026-11-05T07:59:55.793774+00:00",
+      "last_success": "2026-11-05T08:56:57.308748+00:00",
       "count": 10
     },
     "fss_explain": {
-      "last_success": "2026-11-05T07:59:55.613127+00:00",
+      "last_success": "2026-11-05T08:56:56.636752+00:00",
       "count": 10
     },
     "fss_rules": {
-      "last_success": "2026-11-05T07:59:59.193349+00:00",
+      "last_success": "2026-11-05T08:56:59.306888+00:00",
       "count": 10
     }
   },
@@ -271,11 +271,12 @@
     "fsc_press:88091": "filtered",
     "fss_press:249746": "filtered",
     "fss_sanction:202500416:1": "sent",
-    "fss_sanction:202500415:2": "sent"
+    "fss_sanction:202500415:2": "sent",
+    "fss_sanction:202500412:1": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-05T07:59:49.169234+00:00",
-  "last_started_at": "2026-11-05T07:59:49.169234+00:00",
+  "checked_at": "2026-11-05T08:56:51.110960+00:00",
+  "last_started_at": "2026-11-05T08:56:51.110960+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -336,7 +337,12 @@
       "sent_at": "2026-11-05T05:42:31.306876+00:00",
       "title": "DB손해보험주식회사 / 20261030",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500415&emOpenSeq=2"
+    },
+    "fss_sanction:202500412:1": {
+      "sent_at": "2026-11-05T08:56:57.307689+00:00",
+      "title": "신한라이프생명보험주식회사 / 20261028",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500412&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-05T07:59:59.194461+00:00"
+  "finished_at": "2026-11-05T08:56:59.307788+00:00"
 }

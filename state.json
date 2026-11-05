@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-05T15:48:23.020327+00:00",
+      "last_success": "2026-11-05T16:50:17.410251+00:00",
       "count": 10
     },
     "fsc_press": {
-      "last_success": "2026-11-05T15:48:23.102316+00:00",
+      "last_success": "2026-11-05T16:50:17.665367+00:00",
       "count": 10
     },
     "fsc_rules": {
-      "last_success": "2026-11-05T15:48:23.234767+00:00",
+      "last_success": "2026-11-05T16:50:17.694229+00:00",
       "count": 10
     },
     "fss_sanction": {
-      "last_success": "2026-11-05T14:53:42.201012+00:00",
+      "last_success": "2026-11-05T16:50:20.446695+00:00",
       "count": 10
     },
     "fss_press": {
-      "last_success": "2026-11-05T14:53:42.274745+00:00",
+      "last_success": "2026-11-05T16:50:20.194952+00:00",
       "count": 10
     },
     "fss_explain": {
-      "last_success": "2026-11-05T14:53:42.220223+00:00",
+      "last_success": "2026-11-05T16:50:20.464248+00:00",
       "count": 10
     },
     "fss_rules": {
-      "last_success": "2026-11-05T14:53:44.908942+00:00",
+      "last_success": "2026-11-05T16:50:23.138151+00:00",
       "count": 10
     }
   },
@@ -274,26 +274,9 @@
     "fss_sanction:202500415:2": "sent",
     "fss_sanction:202500412:1": "sent"
   },
-  "errors": {
-    "fss_press": {
-      "count": 1,
-      "notified": false
-    },
-    "fss_explain": {
-      "count": 1,
-      "notified": false
-    },
-    "fss_sanction": {
-      "count": 1,
-      "notified": false
-    },
-    "fss_rules": {
-      "count": 1,
-      "notified": false
-    }
-  },
-  "checked_at": "2026-11-05T15:48:20.427775+00:00",
-  "last_started_at": "2026-11-05T15:48:20.427775+00:00",
+  "errors": {},
+  "checked_at": "2026-11-05T16:50:14.601311+00:00",
+  "last_started_at": "2026-11-05T16:50:14.601311+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -361,5 +344,5 @@
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500412&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-05T15:51:29.540771+00:00"
+  "finished_at": "2026-11-05T16:50:23.138975+00:00"
 }

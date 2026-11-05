@@ -1,31 +1,31 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-05T04:42:24.835370+00:00",
+      "last_success": "2026-11-05T05:42:24.970160+00:00",
       "count": 10
     },
     "fsc_press": {
-      "last_success": "2026-11-05T04:42:27.582867+00:00",
+      "last_success": "2026-11-05T05:42:25.126564+00:00",
       "count": 10
     },
     "fsc_rules": {
-      "last_success": "2026-11-05T04:42:27.583392+00:00",
+      "last_success": "2026-11-05T05:42:25.026230+00:00",
       "count": 10
     },
     "fss_sanction": {
-      "last_success": "2026-11-05T04:42:27.831040+00:00",
+      "last_success": "2026-11-05T05:42:31.307705+00:00",
       "count": 10
     },
     "fss_press": {
-      "last_success": "2026-11-05T04:42:27.667982+00:00",
+      "last_success": "2026-11-05T05:42:29.424955+00:00",
       "count": 10
     },
     "fss_explain": {
-      "last_success": "2026-11-05T04:42:27.695751+00:00",
+      "last_success": "2026-11-05T05:42:29.425518+00:00",
       "count": 10
     },
     "fss_rules": {
-      "last_success": "2026-11-05T04:42:30.587643+00:00",
+      "last_success": "2026-11-05T05:42:31.308356+00:00",
       "count": 10
     }
   },
@@ -268,11 +268,14 @@
     "fsc_press:88085": "filtered",
     "fsc_press:88086": "sent",
     "fss_press:249742": "sent",
-    "fsc_press:88091": "filtered"
+    "fsc_press:88091": "filtered",
+    "fss_press:249746": "filtered",
+    "fss_sanction:202500416:1": "sent",
+    "fss_sanction:202500415:2": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-05T04:42:21.818833+00:00",
-  "last_started_at": "2026-11-05T04:42:21.818833+00:00",
+  "checked_at": "2026-11-05T05:42:22.897837+00:00",
+  "last_started_at": "2026-11-05T05:42:22.897837+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -323,7 +326,17 @@
       "sent_at": "2026-11-05T00:57:21.979556+00:00",
       "title": "AI시대, 거세지는 침해위협에 맞서 全 금융권이 튼튼한 보안체계로 무장하도록 혁신적인 정책과제를 적극 추진하겠습니다.",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249742&menuNo=200218"
+    },
+    "fss_sanction:202500416:1": {
+      "sent_at": "2026-11-05T05:42:30.655573+00:00",
+      "title": "메리츠화재해상보험주식회사 / 20261030",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500416&emOpenSeq=1"
+    },
+    "fss_sanction:202500415:2": {
+      "sent_at": "2026-11-05T05:42:31.306876+00:00",
+      "title": "DB손해보험주식회사 / 20261030",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500415&emOpenSeq=2"
     }
   },
-  "finished_at": "2026-11-05T04:42:30.589342+00:00"
+  "finished_at": "2026-11-05T05:42:31.309557+00:00"
 }

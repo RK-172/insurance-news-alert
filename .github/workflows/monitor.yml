@@ -4,8 +4,10 @@ on:
     paths:
       - '.github/workflows/monitor.yml'
       - 'monitor.py'
+      - 'preflight.py'
   schedule:
-    - cron: '3-58/5 * * * *'
+    # UTC: 06:00 <= Korea time < 21:00, every five minutes.
+    - cron: '*/5 0-11,21-23 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -21,20 +23,17 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install lxml==5.3.2
-      - name: Regression tests
-        if: github.event_name != 'schedule'
-        run: python -m unittest -v
+      - name: Check operating hours before setup
+        id: hours
+        run: python3 preflight.py
       - name: Check notification configuration
+        if: steps.hours.outputs.active == 'true'
         id: config
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -44,32 +43,43 @@ jobs:
             echo 'ready=true' >> "$GITHUB_OUTPUT"
           else
             echo 'ready=false' >> "$GITHUB_OUTPUT"
-            echo '설정 대기: Secrets에 TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID를 등록하세요. 아직 알림이 활성화되지 않았습니다.' >> "$GITHUB_STEP_SUMMARY"
+            echo '설정 대기: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID 확인 필요' >> "$GITHUB_STEP_SUMMARY"
           fi
-      - name: Run monitor
+      - uses: actions/setup-python@v5
         if: steps.config.outputs.ready == 'true'
+        with:
+          python-version: '3.12'
+      - name: Install parser
+        if: steps.config.outputs.ready == 'true'
+        run: pip install --quiet lxml==5.3.2
+      - name: Regression tests for code changes
+        if: steps.config.outputs.ready == 'true' && github.event_name != 'schedule'
+        run: python -m unittest -q
+      - name: Scan for new items and queue notifications
+        id: scan
+        if: steps.config.outputs.ready == 'true' && inputs.mode != 'test'
+        run: python -u monitor.py --scan-only
+      - name: Send queued notifications only when needed
+        if: always() && steps.config.outputs.ready == 'true' && steps.scan.outputs.pending_count != '' && steps.scan.outputs.pending_count != '0'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          MODE: ${{ inputs.mode }}
-          EVENT_NAME: ${{ github.event_name }}
-        run: |
-          if [ "$MODE" = test ]; then
-            python -u monitor.py --test-message
-          elif [ "$EVENT_NAME" = schedule ]; then
-            python -u monitor.py --due-only
-          else
-            python -u monitor.py
-          fi
-      - name: Persist delivery state even after partial failure
-        if: always() && steps.config.outputs.ready == 'true'
+        run: python -u monitor.py --send-only
+      - name: Test Telegram connection when explicitly requested
+        if: steps.config.outputs.ready == 'true' && inputs.mode == 'test'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -u monitor.py --test-message
+      - name: Persist scan and delivery records
+        if: always() && steps.scan.outcome != 'skipped' && steps.scan.outcome != ''
         run: |
           if [ -f state.json ]; then
             git config user.name 'insurance-alert-bot'
             git config user.email 'insurance-alert-bot@users.noreply.github.com'
             git add state.json
             if ! git diff --cached --quiet; then
-              git commit -m 'Record collection health and notification state'
+              git commit -m 'Record scan results and delivery queue'
               pushed=false
               for attempt in 1 2 3; do
                 git fetch origin main

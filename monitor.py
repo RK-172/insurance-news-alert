@@ -1,5 +1,5 @@
 """Public-source notifier. No AI API, no paid services, no secrets in state/logs."""
-import argparse, concurrent.futures, datetime as dt, hashlib, json, os, re, time
+import argparse, concurrent.futures, datetime as dt, gzip, json, os, re, time
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, parse_qs, urlencode
 from urllib.request import Request, urlopen
@@ -22,12 +22,14 @@ def relevant(value):
     return any((re.search(r'\bga\b',value) if k=='ga' else k in value) for k in KEYWORDS)
 def fetch(url):
     # Never include request URLs in errors: API URLs may contain credentials.
-    for attempt in range(3):
+    for attempt in range(2):
         try:
-            with urlopen(Request(url,headers={'User-Agent':'InsurancePolicyNotifier/1.0 (public documents; low frequency)'}),timeout=30) as r:
-                return r.read().decode('utf-8')
+            with urlopen(Request(url,headers={'User-Agent':'InsurancePolicyNotifier/1.0 (public documents; low frequency)','Accept-Encoding':'gzip'}),timeout=12) as r:
+                data=r.read()
+                if r.headers.get('Content-Encoding','').lower()=='gzip':data=gzip.decompress(data)
+                return data.decode('utf-8')
         except Exception as exc:
-            if attempt==2: raise RuntimeError('HTTP 요청 실패 (3회 시도; '+type(exc).__name__+')') from None
+            if attempt==1: raise RuntimeError('HTTP 요청 실패 (2회 시도; '+type(exc).__name__+')') from None
             time.sleep(2**attempt)
 
 DISPLAY_LABELS = {
@@ -36,28 +38,6 @@ DISPLAY_LABELS = {
  'fss_press':'금융감독원 / 보도자료', 'fss_explain':'금융감독원 / 보도설명자료',
  'fss_sanction':'금융감독원 / 제재정보', 'fss_rules':'금융감독원 / 세칙 제·개정 예고',
 }
-
-def extract_attachments(node, base):
-    files=[]; seen=set()
-    for a in node.xpath('.//a[@href]'):
-        href=a.get('href',''); lower=href.lower()
-        if not href or lower.startswith(('javascript:','#')): continue
-        if any(k in lower for k in ['viewer','synap','fileview']): continue
-        is_download=any(k in lower for k in ['filedown','download','getfile','downfile'])
-        if not is_download: continue
-        url=urljoin(base,href)
-        if urlsplit(url).scheme!='https' or urlsplit(url).hostname not in ['www.fsc.go.kr','fsc.go.kr','www.fss.or.kr','fss.or.kr']:continue
-        name=text(a)
-        if not re.search(r'\.(pdf|hwpx?|docx?|xlsx?|pptx?|zip)',name,re.I):
-            match=None
-            for parent in list(a.iterancestors())[:4]:
-                candidate=text(parent)
-                match=re.search(r'(.+?\.(?:pdf|hwpx?|docx?|xlsx?|pptx?|zip))',candidate,re.I)
-                if match: break
-            name=match.group(1) if match else (a.get('title') or '첨부파일')
-        if url not in seen:
-            files.append({'name':name[:200],'url':url});seen.add(url)
-    return files
 
 def format_notification(item):
     label=DISPLAY_LABELS.get(item['id'].split(':')[0],item['label'])
@@ -91,7 +71,7 @@ def parse_board(body, source):
             clean={k:v[0] for k,v in query.items() if k in idkeys or k=='menuNo'}
             url=urljoin(base,urlsplit(href).path)+'?'+urlencode(clean)
         dates=re.findall(r'20\d{2}[-.]?\d{2}[-.]?\d{2}',rowtext)
-        result[key+':'+ident]={'id':key+':'+ident,'title':title,'url':url,'date':dates[0] if dates else '', 'label':label,'context':rowtext,'attachments':extract_attachments(row,base)}
+        result[key+':'+ident]={'id':key+':'+ident,'title':title,'url':url,'date':dates[0] if dates else '', 'label':label,'context':rowtext}
     if not result: raise RuntimeError('목록 게시물을 찾지 못함: 구조 변경 또는 차단 확인 필요')
     return list(result.values())
 
@@ -135,7 +115,7 @@ def needs_rules_backfill(item, state):
             and item['date'] >= '2026-11-02'
             and relevant(item['context']))
 
-def collection_due(state, now=None, minimum_seconds=900):
+def collection_due(state, now=None, minimum_seconds=300):
     if state.get('errors'): return True
     value=state.get('checked_at')
     if not value: return True
@@ -146,64 +126,93 @@ def collection_due(state, now=None, minimum_seconds=900):
         return elapsed < 0 or elapsed >= minimum_seconds
     except (ValueError,TypeError): return True
 
+def deliver_pending(state, path):
+    failures=0
+    for ident, entry in list(state.setdefault('pending',{}).items()):
+        if state['seen'].get(ident)=='sent':
+            state['pending'].pop(ident);save(state,path);continue
+        try:
+            telegram(entry['message'])
+            state['seen'][ident]='sent'
+            state.setdefault('notifications',{})[ident]={'sent_at':dt.datetime.now(dt.timezone.utc).isoformat(),'title':entry.get('title',''),'url':entry.get('url','')}
+            state['pending'].pop(ident);save(state,path)
+        except Exception as exc:
+            failures+=1;print('발송 대기 유지: '+str(exc))
+    return failures
+
+def output_pending(state):
+    count=len(state.get('pending',{}))
+    print('발송 대기: '+str(count)+'건')
+    if os.environ.get('GITHUB_OUTPUT'):
+        with open(os.environ['GITHUB_OUTPUT'],'a') as output: output.write('pending_count='+str(count)+'\n')
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--dry-run',action='store_true');p.add_argument('--test-message',action='store_true');p.add_argument('--due-only',action='store_true'); args=p.parse_args()
+    p=argparse.ArgumentParser()
+    p.add_argument('--dry-run',action='store_true')
+    p.add_argument('--test-message',action='store_true')
+    p.add_argument('--due-only',action='store_true')
+    p.add_argument('--scan-only',action='store_true')
+    p.add_argument('--send-only',action='store_true')
+    args=p.parse_args()
     if args.test_message:
-        telegram('보험정책 알림 연결 테스트입니다. 금융위·금감원 수집기 / 국회 수집은 별도 검증 필요.');return
-    path=Path('state.json');state=json.loads(path.read_text()) if path.exists() else {'sources':{},'seen':{},'errors':{}}
-    if not args.dry_run and not all(os.environ.get(k) for k in ['TELEGRAM_BOT_TOKEN','TELEGRAM_CHAT_ID']):
-        raise SystemExit('설정 대기: TELEGRAM_BOT_TOKEN과 TELEGRAM_CHAT_ID를 Secrets에 등록하세요.')
+        telegram('보험정책 알림 연결 테스트입니다.');return
+    path=Path('state.json')
+    state=json.loads(path.read_text()) if path.exists() else {'sources':{},'seen':{},'errors':{}}
+    state.setdefault('pending',{})
+    if args.send_only:
+        failures=deliver_pending(state,path);output_pending(state)
+        if failures: raise SystemExit(1)
+        return
     if args.due_only and not collection_due(state):
-        print('최근 15분 이내 점검 완료: 중복 수집 생략');return
+        print('최근 5분 이내 점검 완료: 중복 수집 생략');output_pending(state);return
     started=dt.datetime.now(dt.timezone.utc)
-    if not args.dry_run:
-        state['last_started_at']=started.isoformat()
-        save(state,path)
     failures=0
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
-        jobs={pool.submit(collect,s,3,set(state['seen'])):s for s in SOURCES}
+        jobs={pool.submit(collect,source,3,set(state['seen'])):source for source in SOURCES}
         for future in concurrent.futures.as_completed(jobs):
             source=jobs[future];key,label=source[:2]
             try:
-                items=future.result(); fresh=key not in state['sources']
+                items=future.result(); fresh=key not in state['sources'];new_count=0
                 for item in reversed(items):
-                    backfill = needs_rules_backfill(item, state)
+                    backfill=needs_rules_backfill(item,state)
                     if item['id'] in state['seen'] and not backfill: continue
                     if fresh:
-                        cutoff=(dt.datetime.now(dt.timezone.utc)-dt.timedelta(days=2)).date().isoformat()
-                        recent_rule=(key=='fsc_rules' and item['date']>=cutoff and relevant(item['context']))
-                        if not recent_rule:
-                            if not args.dry_run: state['seen'][item['id']]='baseline'
+                        cutoff=(started-dt.timedelta(days=2)).date().isoformat()
+                        if not (key=='fsc_rules' and item['date']>=cutoff and relevant(item['context'])):
+                            if not args.dry_run:state['seen'][item['id']]='baseline'
                             continue
-                        backfill=True
-                    try: matches=detail_relevant(item)
-                    except Exception: matches=True # classification failure must not suppress alert
+                    new_count+=1
+                    try:matches=detail_relevant(item)
+                    except Exception:matches=True
                     if matches:
-                        msg=format_notification(item)
-                        if args.dry_run: print(msg)
+                        message=format_notification(item)
+                        if args.dry_run:print(message)
                         else:
-                            telegram(msg)
-                            state.setdefault('notifications',{})[item['id']]={'sent_at':dt.datetime.now(dt.timezone.utc).isoformat(),'title':item['title'],'url':item['url']}
-                    if not args.dry_run:
-                        state['seen'][item['id']]='sent' if matches else 'filtered';save(state,path)
+                            state['pending'][item['id']]={'message':message,'title':item['title'],'url':item['url'],'detected_at':dt.datetime.now(dt.timezone.utc).isoformat()}
+                            state['seen'][item['id']]='pending'
+                    elif not args.dry_run:state['seen'][item['id']]='filtered'
                 if not args.dry_run:
-                    state['sources'][key]={'last_success':dt.datetime.now(dt.timezone.utc).isoformat(),'count':len(items)}
+                    state['sources'][key]={'last_success':dt.datetime.now(dt.timezone.utc).isoformat(),'count':len(items),'new_count':new_count}
                     previous=state['errors'].pop(key,None)
-                    if previous and previous.get('notified'):telegram(f'[수집 복구] {label}')
-                    if fresh: telegram(f'[감시 시작] {label}: 기준 목록 {len(items)}건을 확인했습니다. 입법예고는 최근 2일 관련 자료도 확인하며 이후 신규 자료를 알립니다.')
+                    if previous and previous.get('notified'):
+                        ident='health:recovered:'+key+':'+started.isoformat()
+                        state['pending'][ident]={'message':'[수집 복구] '+label,'title':label,'url':source[2]}
                     save(state,path)
-                print(label+': '+str(len(items))+'건 읽음'+(' (최초 기준 저장 예정)' if fresh else ''))
-            except Exception as e:
-                failures+=1; print(label+': '+str(e))
+                print(label+': '+str(len(items))+'건 확인, 신규 '+str(new_count)+'건')
+            except Exception as exc:
+                failures+=1;print(label+': '+str(exc))
                 if not args.dry_run:
                     err=state['errors'].setdefault(key,{'count':0,'notified':False});err['count']+=1
-                    if err['count']>=3 and not err['notified']:
-                        try:telegram(f'[수집 장애] {label}: 연속 {err["count"]}회 실패. 새 자료 없음과 다릅니다. 점검이 필요합니다.');err['notified']=True
-                        except Exception:pass
+                    if err['count']>=3 and not err.get('notified'):
+                        ident='health:failed:'+key+':'+started.isoformat()
+                        state['pending'][ident]={'message':f'[수집 장애] {label}: 연속 {err["count"]}회 실패. 점검이 필요합니다.','title':label,'url':source[2]}
+                        err['notified']=True
                     save(state,path)
-    print('국회 입법: 미연결 — 공식 수집 경로 검증 및 인증키 설정 필요')
     if not args.dry_run:
-        state['checked_at']=started.isoformat()
+        state['checked_at']=started.isoformat();state['last_started_at']=started.isoformat()
         state['finished_at']=dt.datetime.now(dt.timezone.utc).isoformat();save(state,path)
-    if failures: raise SystemExit(1)
+        if not args.scan_only:failures+=deliver_pending(state,path)
+    output_pending(state)
+    print('국회 입법: 아직 미연결')
+    if failures:raise SystemExit(1)
 if __name__=='__main__':main()

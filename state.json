@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-06T08:55:31.747384+00:00",
+      "last_success": "2026-11-06T09:56:31.314791+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-06T08:55:31.954551+00:00",
+      "last_success": "2026-11-06T09:56:31.469694+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-06T08:55:31.936465+00:00",
+      "last_success": "2026-11-06T09:56:31.498994+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-06T08:55:40.758563+00:00",
-      "count": 10,
-      "new_count": 4
-    },
-    "fss_press": {
-      "last_success": "2026-11-06T08:55:34.054004+00:00",
+      "last_success": "2026-11-06T09:56:34.584836+00:00",
       "count": 10,
       "new_count": 0
     },
+    "fss_press": {
+      "last_success": "2026-11-06T09:56:34.660773+00:00",
+      "count": 10,
+      "new_count": 1
+    },
     "fss_explain": {
-      "last_success": "2026-11-06T08:55:40.761953+00:00",
+      "last_success": "2026-11-06T09:56:34.628723+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-06T08:55:40.762680+00:00",
+      "last_success": "2026-11-06T09:56:37.271358+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -288,11 +288,12 @@
     "fss_sanction:202500447:1": "sent",
     "fss_sanction:202500561:1": "sent",
     "fss_sanction:202500563:1": "sent",
-    "fss_sanction:202500074:1": "sent"
+    "fss_sanction:202500074:1": "sent",
+    "fss_press:249765": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-06T08:55:29.302110+00:00",
-  "last_started_at": "2026-11-06T08:55:29.302110+00:00",
+  "checked_at": "2026-11-06T09:56:28.683599+00:00",
+  "last_started_at": "2026-11-06T09:56:28.683599+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -388,8 +389,13 @@
       "sent_at": "2026-11-06T08:55:43.662538+00:00",
       "title": "삼성증권(주) / 20261029",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500074&emOpenSeq=1"
+    },
+    "fss_press:249765": {
+      "sent_at": "2026-11-06T09:56:38.097787+00:00",
+      "title": "정부와 퇴직연금사업자가 함께 안정성과 수익성을 갖춘 퇴직연금 생태계를 만들어 나가겠습니다.",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249765&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-06T08:55:40.764054+00:00",
+  "finished_at": "2026-11-06T09:56:37.272319+00:00",
   "pending": {}
 }

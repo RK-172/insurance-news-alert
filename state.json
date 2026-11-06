@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-06T07:58:27.574697+00:00",
+      "last_success": "2026-11-06T08:55:31.747384+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-06T07:58:27.651345+00:00",
+      "last_success": "2026-11-06T08:55:31.954551+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-06T07:58:27.636407+00:00",
+      "last_success": "2026-11-06T08:55:31.936465+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-06T07:58:30.080784+00:00",
+      "last_success": "2026-11-06T08:55:40.758563+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 4
     },
     "fss_press": {
-      "last_success": "2026-11-06T07:58:30.117130+00:00",
+      "last_success": "2026-11-06T08:55:34.054004+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-06T07:58:30.099637+00:00",
+      "last_success": "2026-11-06T08:55:40.761953+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-06T07:58:32.606573+00:00",
+      "last_success": "2026-11-06T08:55:40.762680+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -284,11 +284,15 @@
     "fsc_press:88098": "sent",
     "fsc_press:88099": "filtered",
     "fss_press:249759": "filtered",
-    "fsc_press:88100": "filtered"
+    "fsc_press:88100": "filtered",
+    "fss_sanction:202500447:1": "sent",
+    "fss_sanction:202500561:1": "sent",
+    "fss_sanction:202500563:1": "sent",
+    "fss_sanction:202500074:1": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-06T07:58:24.965310+00:00",
-  "last_started_at": "2026-11-06T07:58:24.965310+00:00",
+  "checked_at": "2026-11-06T08:55:29.302110+00:00",
+  "last_started_at": "2026-11-06T08:55:29.302110+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -364,8 +368,28 @@
       "sent_at": "2026-11-06T02:45:47.852439+00:00",
       "title": "금융권은 개인정보 유출 사고에 따른 보이스피싱 예방에 총력 대응하고 있습니다.",
       "url": "https://www.fsc.go.kr/no010101/88098"
+    },
+    "fss_sanction:202500447:1": {
+      "sent_at": "2026-11-06T08:55:41.636493+00:00",
+      "title": "한국투자증권 / 20261029",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500447&emOpenSeq=1"
+    },
+    "fss_sanction:202500561:1": {
+      "sent_at": "2026-11-06T08:55:42.290965+00:00",
+      "title": "아이엠뱅크 / 20261029",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500561&emOpenSeq=1"
+    },
+    "fss_sanction:202500563:1": {
+      "sent_at": "2026-11-06T08:55:42.965891+00:00",
+      "title": "삼성화재해상보험주식회사 / 20261029",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500563&emOpenSeq=1"
+    },
+    "fss_sanction:202500074:1": {
+      "sent_at": "2026-11-06T08:55:43.662538+00:00",
+      "title": "삼성증권(주) / 20261029",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500074&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-06T07:58:32.607785+00:00",
+  "finished_at": "2026-11-06T08:55:40.764054+00:00",
   "pending": {}
 }

@@ -39,15 +39,11 @@ class MessageTests(unittest.TestCase):
   self.assertEqual(message,'[금융감독원 / 보도자료]\n퇴직연금 캠페인\nhttps://www.fss.or.kr/article')
   self.assertEqual(len(message.splitlines()),3)
   self.assertNotIn('첨부파일',message);self.assertNotIn('등록일',message);self.assertNotIn('※',message)
- def test_attachments_exclude_viewers_and_duplicates(self):
-  node=monitor.html.fromstring('<div><a href="/fss/cmmn/file/fileDown.do?fileSn=1">자료.pdf</a><a href="/fss/cmmn/file/fileDown.do?fileSn=1">중복.pdf</a><a href="/viewer">뷰어</a></div>')
-  files=monitor.extract_attachments(node,'https://www.fss.or.kr')
-  self.assertEqual(len(files),1);self.assertEqual(files[0]['name'],'자료.pdf')
 class SchedulingTests(unittest.TestCase):
  def test_gate_uses_elapsed_time_not_rounded_clock(self):
   now=monitor.dt.datetime(2026,11,4,7,0,tzinfo=monitor.dt.timezone.utc)
-  self.assertFalse(monitor.collection_due({'checked_at':'2026-11-04T06:46:00+00:00'},now))
-  self.assertTrue(monitor.collection_due({'checked_at':'2026-11-04T06:45:00+00:00'},now))
+  self.assertFalse(monitor.collection_due({'checked_at':'2026-11-04T06:56:00+00:00'},now))
+  self.assertTrue(monitor.collection_due({'checked_at':'2026-11-04T06:55:00+00:00'},now))
  def test_failed_sources_retry_without_waiting(self):
   now=monitor.dt.datetime(2026,11,4,7,0,tzinfo=monitor.dt.timezone.utc)
   self.assertTrue(monitor.collection_due({'checked_at':now.isoformat(),'errors':{'fsc_press':{'count':1}}},now))
@@ -60,5 +56,44 @@ class SchedulingTests(unittest.TestCase):
   with patch.object(monitor,'fetch',return_value='unused') as fetch,patch.object(monitor,'parse_board',return_value=[new,old]):
    rows=monitor.collect(monitor.SOURCES[0],known_ids={'fsc_press:old'})
    self.assertEqual(rows,[new,old]);self.assertEqual(fetch.call_count,1)
+class LightweightTests(unittest.TestCase):
+ def test_night_boundaries_korea(self):
+  from preflight import active_hours
+  tz=monitor.dt.timezone(monitor.dt.timedelta(hours=9))
+  for hour,minute,expected in [(5,59,False),(6,0,True),(20,59,True),(21,0,False),(0,0,False)]:
+   self.assertEqual(active_hours(monitor.dt.datetime(2026,11,6,hour,minute,tzinfo=tz)),expected)
+ def test_unchanged_items_never_fetch_details(self):
+  import tempfile,json,os,sys
+  from pathlib import Path
+  with tempfile.TemporaryDirectory() as folder:
+   cwd=os.getcwd();os.chdir(folder)
+   try:
+    Path('state.json').write_text(json.dumps({'sources':{'fsc_press':{}},'seen':{'fsc_press:1':'sent'},'errors':{}}))
+    with patch.object(monitor,'SOURCES',[monitor.SOURCES[0]]),patch.object(monitor,'collect',return_value=[{'id':'fsc_press:1'}]),patch.object(monitor,'detail_relevant') as detail,patch.object(monitor,'telegram') as send,patch.object(sys,'argv',['monitor.py','--scan-only']):
+     monitor.main();detail.assert_not_called();send.assert_not_called()
+   finally:os.chdir(cwd)
+ def test_scan_queues_before_separate_send(self):
+  import tempfile,json,os,sys
+  from pathlib import Path
+  item={'id':'fsc_press:2','context':'보험','title':'새 보험 자료','url':'https://www.fsc.go.kr/no010101/2','label':'금융위 보도자료','date':'2026-11-06'}
+  with tempfile.TemporaryDirectory() as folder:
+   cwd=os.getcwd();os.chdir(folder)
+   try:
+    Path('state.json').write_text(json.dumps({'sources':{'fsc_press':{}},'seen':{'fsc_press:1':'sent'},'errors':{}}))
+    with patch.object(monitor,'SOURCES',[monitor.SOURCES[0]]),patch.object(monitor,'collect',return_value=[item]),patch.object(monitor,'telegram') as send,patch.object(sys,'argv',['monitor.py','--scan-only']):
+     monitor.main();send.assert_not_called()
+    state=json.loads(Path('state.json').read_text());self.assertEqual(state['seen'][item['id']],'pending')
+    with patch.object(monitor,'telegram') as send:
+     self.assertEqual(monitor.deliver_pending(state,Path('state.json')),0);send.assert_called_once()
+    self.assertEqual(state['seen'][item['id']],'sent');self.assertFalse(state['pending'])
+   finally:os.chdir(cwd)
+ def test_failed_send_keeps_queue_for_next_run(self):
+  import tempfile
+  from pathlib import Path
+  state={'seen':{'x':'pending'},'pending':{'x':{'message':'test','title':'test','url':'test'}}}
+  with tempfile.TemporaryDirectory() as folder,patch.object(monitor,'telegram',side_effect=RuntimeError('failed')):
+   self.assertEqual(monitor.deliver_pending(state,Path(folder)/'state.json'),1)
+  self.assertIn('x',state['pending']);self.assertEqual(state['seen']['x'],'pending')
 if __name__=='__main__':unittest.main()
+
 

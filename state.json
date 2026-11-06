@@ -1,32 +1,39 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-06T02:18:02.493832+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:42.282555+00:00",
+      "count": 10,
+      "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-06T02:18:02.618409+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:44.790370+00:00",
+      "count": 10,
+      "new_count": 2
     },
     "fsc_rules": {
-      "last_success": "2026-11-06T02:18:02.669797+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:42.439904+00:00",
+      "count": 10,
+      "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-06T02:18:05.517863+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:45.081066+00:00",
+      "count": 10,
+      "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-06T02:18:05.517476+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:44.828922+00:00",
+      "count": 10,
+      "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-06T02:18:05.518370+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:45.062466+00:00",
+      "count": 10,
+      "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-06T02:18:07.319372+00:00",
-      "count": 10
+      "last_success": "2026-11-06T02:45:47.318796+00:00",
+      "count": 10,
+      "new_count": 0
     }
   },
   "seen": {
@@ -273,11 +280,13 @@
     "fss_sanction:202500416:1": "sent",
     "fss_sanction:202500415:2": "sent",
     "fss_sanction:202500412:1": "sent",
-    "fss_press:249758": "sent"
+    "fss_press:249758": "sent",
+    "fsc_press:88098": "sent",
+    "fsc_press:88099": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-06T02:17:59.998599+00:00",
-  "last_started_at": "2026-11-06T02:17:59.998599+00:00",
+  "checked_at": "2026-11-06T02:45:39.593252+00:00",
+  "last_started_at": "2026-11-06T02:45:39.593252+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -348,7 +357,13 @@
       "sent_at": "2026-11-06T02:18:05.516945+00:00",
       "title": "금융권은 개인정보 유출 사고에 따른 보이스피싱 예방에 총력 대응하고 있습니다.",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249758&menuNo=200218"
+    },
+    "fsc_press:88098": {
+      "sent_at": "2026-11-06T02:45:47.852439+00:00",
+      "title": "금융권은 개인정보 유출 사고에 따른 보이스피싱 예방에 총력 대응하고 있습니다.",
+      "url": "https://www.fsc.go.kr/no010101/88098"
     }
   },
-  "finished_at": "2026-11-06T02:18:07.322392+00:00"
+  "finished_at": "2026-11-06T02:45:47.320282+00:00",
+  "pending": {}
 }

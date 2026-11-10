@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-10T11:30:18.293259+00:00",
+      "last_success": "2026-11-10T21:36:23.344429+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-10T11:30:18.420090+00:00",
+      "last_success": "2026-11-10T21:36:23.480317+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-10T11:30:18.461648+00:00",
+      "last_success": "2026-11-10T21:36:23.445043+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-10T11:30:21.334909+00:00",
+      "last_success": "2026-11-10T21:36:25.936850+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-10T11:30:20.660313+00:00",
+      "last_success": "2026-11-10T21:36:28.406433+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-10T11:30:20.544563+00:00",
+      "last_success": "2026-11-10T21:36:25.871884+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-10T11:30:22.842112+00:00",
+      "last_success": "2026-11-10T21:36:28.537751+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -300,11 +300,12 @@
     "fss_sanction:202500158:4": "sent",
     "fss_press:249795": "sent",
     "fss_rules:4506": "filtered",
-    "fss_sanction:202200403:9": "sent"
+    "fss_sanction:202200403:9": "sent",
+    "fss_press:249801": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-10T11:30:15.436593+00:00",
-  "last_started_at": "2026-11-10T11:30:15.436593+00:00",
+  "checked_at": "2026-11-10T21:36:20.816730+00:00",
+  "last_started_at": "2026-11-10T21:36:20.816730+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -427,6 +428,6 @@
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202200403&emOpenSeq=9"
     }
   },
-  "finished_at": "2026-11-10T11:30:22.876411+00:00",
+  "finished_at": "2026-11-10T21:36:28.539048+00:00",
   "pending": {}
 }

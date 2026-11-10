@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-10T01:58:09.563578+00:00",
+      "last_success": "2026-11-10T02:49:18.127459+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-10T01:58:12.083800+00:00",
+      "last_success": "2026-11-10T02:49:18.259697+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-10T01:58:09.709728+00:00",
+      "last_success": "2026-11-10T02:49:18.287848+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-10T01:58:12.754020+00:00",
+      "last_success": "2026-11-10T02:49:22.927554+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_press": {
-      "last_success": "2026-11-10T01:58:12.360391+00:00",
+      "last_success": "2026-11-10T02:49:20.520240+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-10T01:58:15.516018+00:00",
+      "last_success": "2026-11-10T02:49:20.413155+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-10T01:58:15.119171+00:00",
+      "last_success": "2026-11-10T02:49:22.928253+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -296,11 +296,12 @@
     "fss_press:249775": "filtered",
     "fss_press:249776": "filtered",
     "fss_press:249790": "filtered",
-    "fsc_press:88110": "filtered"
+    "fsc_press:88110": "filtered",
+    "fss_sanction:202500158:4": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-10T01:58:06.695253+00:00",
-  "last_started_at": "2026-11-10T01:58:06.695253+00:00",
+  "checked_at": "2026-11-10T02:49:15.977538+00:00",
+  "last_started_at": "2026-11-10T02:49:15.977538+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -406,8 +407,13 @@
       "sent_at": "2026-11-09T02:13:17.187325+00:00",
       "title": "다음 금융은 이미 시작됐다 「코리아 핀테크 위크 2026」, 11월 25일 개막",
       "url": "https://www.fsc.go.kr/no010101/88104"
+    },
+    "fss_sanction:202500158:4": {
+      "sent_at": "2026-11-10T02:49:24.244193+00:00",
+      "title": "삼성증권(주) / 20261028",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500158&emOpenSeq=4"
     }
   },
-  "finished_at": "2026-11-10T01:58:15.519257+00:00",
+  "finished_at": "2026-11-10T02:49:22.929464+00:00",
   "pending": {}
 }

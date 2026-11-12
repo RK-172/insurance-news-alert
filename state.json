@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-12T02:49:52.306609+00:00",
+      "last_success": "2026-11-12T03:39:01.307967+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-12T02:49:52.307270+00:00",
+      "last_success": "2026-11-12T03:39:01.452891+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-12T02:49:52.307787+00:00",
+      "last_success": "2026-11-12T03:39:01.501665+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-12T02:49:55.361035+00:00",
-      "count": 10,
-      "new_count": 1
-    },
-    "fss_press": {
-      "last_success": "2026-11-12T02:49:55.361799+00:00",
+      "last_success": "2026-11-12T03:39:06.904444+00:00",
       "count": 10,
       "new_count": 0
     },
+    "fss_press": {
+      "last_success": "2026-11-12T03:39:06.903604+00:00",
+      "count": 10,
+      "new_count": 1
+    },
     "fss_explain": {
-      "last_success": "2026-11-12T02:49:52.693571+00:00",
+      "last_success": "2026-11-12T03:39:04.059116+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-12T02:49:55.505399+00:00",
+      "last_success": "2026-11-12T03:39:06.905068+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -316,11 +316,12 @@
     "fsc_press:88125": "sent",
     "fsc_press:88127": "filtered",
     "fsc_explain:88129": "filtered",
-    "fss_sanction:202300501:10": "sent"
+    "fss_sanction:202300501:10": "sent",
+    "fss_press:249820": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-12T02:49:47.427410+00:00",
-  "last_started_at": "2026-11-12T02:49:47.427410+00:00",
+  "checked_at": "2026-11-12T03:38:58.621641+00:00",
+  "last_started_at": "2026-11-12T03:38:58.621641+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -496,8 +497,13 @@
       "sent_at": "2026-11-12T02:49:56.171157+00:00",
       "title": "수협은행 / 20261109",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202300501&emOpenSeq=10"
+    },
+    "fss_press:249820": {
+      "sent_at": "2026-11-12T03:39:07.614791+00:00",
+      "title": "누가 내 신분증과 위임장을 들고 주민센터에 왔다고요 100% 보이스피싱 사기입니다",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249820&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-12T02:49:55.507016+00:00",
+  "finished_at": "2026-11-12T03:39:06.906435+00:00",
   "pending": {}
 }

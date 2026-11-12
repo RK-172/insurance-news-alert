@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-12T11:08:04.172159+00:00",
+      "last_success": "2026-11-12T21:41:27.955570+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-12T11:08:04.269987+00:00",
+      "last_success": "2026-11-12T21:41:28.089970+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-12T11:08:04.440658+00:00",
+      "last_success": "2026-11-12T21:41:28.031918+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-12T11:08:07.217980+00:00",
+      "last_success": "2026-11-12T21:41:32.493038+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-12T11:08:06.975723+00:00",
+      "last_success": "2026-11-12T21:41:32.491561+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-12T11:08:06.948900+00:00",
+      "last_success": "2026-11-12T21:41:32.492339+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-12T11:08:09.678595+00:00",
+      "last_success": "2026-11-12T21:41:32.493566+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -322,11 +322,12 @@
     "fsc_press:88133": "sent",
     "fss_press:249822": "filtered",
     "fss_press:249824": "sent",
-    "fss_press:249825": "sent"
+    "fss_press:249825": "sent",
+    "fss_press:249830": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-12T11:08:01.339995+00:00",
-  "last_started_at": "2026-11-12T11:08:01.339995+00:00",
+  "checked_at": "2026-11-12T21:41:25.967576+00:00",
+  "last_started_at": "2026-11-12T21:41:25.967576+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -524,6 +525,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249825&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-12T11:08:09.679634+00:00",
+  "finished_at": "2026-11-12T21:41:32.502855+00:00",
   "pending": {}
 }

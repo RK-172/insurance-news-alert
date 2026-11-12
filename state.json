@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-11T23:43:17.116349+00:00",
+      "last_success": "2026-11-12T00:38:31.264496+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-11T23:43:17.250788+00:00",
+      "last_success": "2026-11-12T00:38:33.409234+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fsc_rules": {
-      "last_success": "2026-11-11T23:43:17.292977+00:00",
+      "last_success": "2026-11-12T00:38:31.354653+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-11T23:43:19.906788+00:00",
+      "last_success": "2026-11-12T00:38:35.737969+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-11T23:43:19.822607+00:00",
+      "last_success": "2026-11-12T00:38:35.737219+00:00",
       "count": 10,
       "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-11T23:43:19.804704+00:00",
+      "last_success": "2026-11-12T00:38:35.738612+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-11T23:43:22.597205+00:00",
+      "last_success": "2026-11-12T00:38:35.739220+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -309,11 +309,13 @@
     "fss_sanction:202500447:3": "sent",
     "fss_press:249812": "filtered",
     "fss_press:249814": "sent",
-    "fss_press:249815": "sent"
+    "fss_press:249815": "sent",
+    "fsc_press:88123": "sent",
+    "fss_press:249817": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-11T23:43:14.533479+00:00",
-  "last_started_at": "2026-11-11T23:43:14.533479+00:00",
+  "checked_at": "2026-11-12T00:38:29.136817+00:00",
+  "last_started_at": "2026-11-12T00:38:29.136817+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -469,8 +471,13 @@
       "sent_at": "2026-11-11T23:43:23.253891+00:00",
       "title": "금융회사 지배구조의 공정성과 투명성을 제고합니다.",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249815&menuNo=200218"
+    },
+    "fsc_press:88123": {
+      "sent_at": "2026-11-12T00:38:36.556448+00:00",
+      "title": "미공개 무상증자정보를 이용한 내부자등에 대한 중대범죄수사청 고발·통보 조치 의결",
+      "url": "https://www.fsc.go.kr/no010101/88123"
     }
   },
-  "finished_at": "2026-11-11T23:43:22.598487+00:00",
+  "finished_at": "2026-11-12T00:38:35.740581+00:00",
   "pending": {}
 }

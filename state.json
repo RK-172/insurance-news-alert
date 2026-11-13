@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-13T06:48:02.162070+00:00",
+      "last_success": "2026-11-13T08:03:41.013540+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-13T06:48:04.946108+00:00",
+      "last_success": "2026-11-13T08:03:41.212350+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-13T06:48:02.350694+00:00",
+      "last_success": "2026-11-13T08:03:41.119163+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-13T06:48:05.363524+00:00",
+      "last_success": "2026-11-13T08:03:47.177170+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 3
     },
     "fss_press": {
-      "last_success": "2026-11-13T06:48:05.275733+00:00",
+      "last_success": "2026-11-13T08:03:47.178011+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-13T06:48:05.343189+00:00",
+      "last_success": "2026-11-13T08:03:44.108606+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-13T06:48:08.274397+00:00",
+      "last_success": "2026-11-13T08:03:47.214747+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -332,11 +332,14 @@
     "fsc_press:88142": "filtered",
     "fsc_press:88143": "sent",
     "fss_sanction:202600109:1": "sent",
-    "fsc_press:88146": "sent"
+    "fsc_press:88146": "sent",
+    "fss_sanction:202500082:1": "sent",
+    "fss_sanction:202500048:1": "sent",
+    "fss_sanction:202400651:1": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-13T06:47:59.330434+00:00",
-  "last_started_at": "2026-11-13T06:47:59.330434+00:00",
+  "checked_at": "2026-11-13T08:03:38.227839+00:00",
+  "last_started_at": "2026-11-13T08:03:38.227839+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -552,8 +555,23 @@
       "sent_at": "2026-11-13T06:48:08.865641+00:00",
       "title": "신진창 금융위원회 부위원장,  씨티그룹 국제부문 총 책임자 면담",
       "url": "https://www.fsc.go.kr/no010101/88146"
+    },
+    "fss_sanction:202500082:1": {
+      "sent_at": "2026-11-13T08:03:47.960884+00:00",
+      "title": "굿리치주식회사 / 20261106",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500082&emOpenSeq=1"
+    },
+    "fss_sanction:202500048:1": {
+      "sent_at": "2026-11-13T08:03:48.423653+00:00",
+      "title": "신한금융플러스 주식회사 / 20261106",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500048&emOpenSeq=1"
+    },
+    "fss_sanction:202400651:1": {
+      "sent_at": "2026-11-13T08:03:48.913347+00:00",
+      "title": "이오스자산운용 주식회사 / 20261109",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202400651&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-13T06:48:08.276033+00:00",
+  "finished_at": "2026-11-13T08:03:47.216415+00:00",
   "pending": {}
 }

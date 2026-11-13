@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-13T05:46:41.032003+00:00",
+      "last_success": "2026-11-13T06:48:02.162070+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-13T05:46:41.271351+00:00",
+      "last_success": "2026-11-13T06:48:04.946108+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fsc_rules": {
-      "last_success": "2026-11-13T05:46:41.147780+00:00",
+      "last_success": "2026-11-13T06:48:02.350694+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-13T05:46:47.337394+00:00",
+      "last_success": "2026-11-13T06:48:05.363524+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-13T05:46:44.055649+00:00",
+      "last_success": "2026-11-13T06:48:05.275733+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-13T05:46:44.185448+00:00",
+      "last_success": "2026-11-13T06:48:05.343189+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-13T05:46:47.338143+00:00",
+      "last_success": "2026-11-13T06:48:08.274397+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -331,11 +331,12 @@
     "fsc_press:88140": "filtered",
     "fsc_press:88142": "filtered",
     "fsc_press:88143": "sent",
-    "fss_sanction:202600109:1": "sent"
+    "fss_sanction:202600109:1": "sent",
+    "fsc_press:88146": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-13T05:46:37.970817+00:00",
-  "last_started_at": "2026-11-13T05:46:37.970817+00:00",
+  "checked_at": "2026-11-13T06:47:59.330434+00:00",
+  "last_started_at": "2026-11-13T06:47:59.330434+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -546,8 +547,13 @@
       "sent_at": "2026-11-13T05:46:47.907709+00:00",
       "title": "농협은행주식회사 / 20261105",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202600109&emOpenSeq=1"
+    },
+    "fsc_press:88146": {
+      "sent_at": "2026-11-13T06:48:08.865641+00:00",
+      "title": "신진창 금융위원회 부위원장,  씨티그룹 국제부문 총 책임자 면담",
+      "url": "https://www.fsc.go.kr/no010101/88146"
     }
   },
-  "finished_at": "2026-11-13T05:46:47.340074+00:00",
+  "finished_at": "2026-11-13T06:48:08.276033+00:00",
   "pending": {}
 }

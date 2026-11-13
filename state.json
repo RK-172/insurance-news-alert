@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-13T04:49:40.004514+00:00",
+      "last_success": "2026-11-13T05:46:41.032003+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-13T04:49:42.389679+00:00",
+      "last_success": "2026-11-13T05:46:41.271351+00:00",
       "count": 10,
-      "new_count": 2
+      "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-13T04:49:42.390539+00:00",
+      "last_success": "2026-11-13T05:46:41.147780+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-13T04:49:42.749137+00:00",
+      "last_success": "2026-11-13T05:46:47.337394+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_press": {
-      "last_success": "2026-11-13T04:49:42.605173+00:00",
+      "last_success": "2026-11-13T05:46:44.055649+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-13T04:49:42.631046+00:00",
+      "last_success": "2026-11-13T05:46:44.185448+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-13T04:49:45.280048+00:00",
+      "last_success": "2026-11-13T05:46:47.338143+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -330,11 +330,12 @@
     "fsc_press:88139": "filtered",
     "fsc_press:88140": "filtered",
     "fsc_press:88142": "filtered",
-    "fsc_press:88143": "sent"
+    "fsc_press:88143": "sent",
+    "fss_sanction:202600109:1": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-13T04:49:37.274345+00:00",
-  "last_started_at": "2026-11-13T04:49:37.274345+00:00",
+  "checked_at": "2026-11-13T05:46:37.970817+00:00",
+  "last_started_at": "2026-11-13T05:46:37.970817+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -540,8 +541,13 @@
       "sent_at": "2026-11-13T04:49:46.005359+00:00",
       "title": "지역기업과의 동행, 6개 정책금융기관이 현장에서 함께 합니다.",
       "url": "https://www.fsc.go.kr/no010101/88143"
+    },
+    "fss_sanction:202600109:1": {
+      "sent_at": "2026-11-13T05:46:47.907709+00:00",
+      "title": "농협은행주식회사 / 20261105",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202600109&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-13T04:49:45.281492+00:00",
+  "finished_at": "2026-11-13T05:46:47.340074+00:00",
   "pending": {}
 }

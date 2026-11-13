@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-13T02:10:10.437863+00:00",
+      "last_success": "2026-11-13T02:58:51.195557+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-13T02:10:15.736037+00:00",
+      "last_success": "2026-11-13T02:58:54.759199+00:00",
       "count": 10,
-      "new_count": 2
+      "new_count": 1
     },
     "fsc_rules": {
-      "last_success": "2026-11-13T02:10:15.736875+00:00",
+      "last_success": "2026-11-13T02:58:54.760049+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-13T02:10:15.738755+00:00",
+      "last_success": "2026-11-13T02:58:54.762103+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-13T02:10:15.738011+00:00",
+      "last_success": "2026-11-13T02:58:54.760634+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-13T02:10:15.737456+00:00",
+      "last_success": "2026-11-13T02:58:54.761379+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-13T02:10:15.739509+00:00",
+      "last_success": "2026-11-13T02:58:57.340525+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -327,11 +327,12 @@
     "fsc_press:88137": "filtered",
     "fss_press:249834": "filtered",
     "fsc_press:88138": "sent",
-    "fsc_press:88139": "filtered"
+    "fsc_press:88139": "filtered",
+    "fsc_press:88140": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-13T02:10:07.445036+00:00",
-  "last_started_at": "2026-11-13T02:10:07.445036+00:00",
+  "checked_at": "2026-11-13T02:58:48.053599+00:00",
+  "last_started_at": "2026-11-13T02:58:48.053599+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -534,6 +535,6 @@
       "url": "https://www.fsc.go.kr/no010101/88138"
     }
   },
-  "finished_at": "2026-11-13T02:10:15.740987+00:00",
+  "finished_at": "2026-11-13T02:58:57.341832+00:00",
   "pending": {}
 }

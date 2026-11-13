@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-13T01:06:15.956331+00:00",
+      "last_success": "2026-11-13T02:10:10.437863+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-13T01:06:19.520311+00:00",
+      "last_success": "2026-11-13T02:10:15.736037+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 2
     },
     "fsc_rules": {
-      "last_success": "2026-11-13T01:06:16.065376+00:00",
+      "last_success": "2026-11-13T02:10:15.736875+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-13T01:06:22.650325+00:00",
+      "last_success": "2026-11-13T02:10:15.738755+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-13T01:06:22.648388+00:00",
+      "last_success": "2026-11-13T02:10:15.738011+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-13T01:06:22.649340+00:00",
+      "last_success": "2026-11-13T02:10:15.737456+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-13T01:06:22.651227+00:00",
+      "last_success": "2026-11-13T02:10:15.739509+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -325,11 +325,13 @@
     "fss_press:249825": "sent",
     "fss_press:249830": "filtered",
     "fsc_press:88137": "filtered",
-    "fss_press:249834": "filtered"
+    "fss_press:249834": "filtered",
+    "fsc_press:88138": "sent",
+    "fsc_press:88139": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-13T01:06:13.107345+00:00",
-  "last_started_at": "2026-11-13T01:06:13.107345+00:00",
+  "checked_at": "2026-11-13T02:10:07.445036+00:00",
+  "last_started_at": "2026-11-13T02:10:07.445036+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -525,8 +527,13 @@
       "sent_at": "2026-11-12T08:03:45.926423+00:00",
       "title": "가상자산사업자에 대한 최고 수준의 보안 강화 조치를 통해 이용자의 자산과 정보를 철저히 지켜나가겠습니다",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249825&menuNo=200218"
+    },
+    "fsc_press:88138": {
+      "sent_at": "2026-11-13T02:10:16.448810+00:00",
+      "title": "261112(보도참고) 지배구조 개선방안(’11.12일 발표) 관련 설명자료",
+      "url": "https://www.fsc.go.kr/no010101/88138"
     }
   },
-  "finished_at": "2026-11-13T01:06:22.653981+00:00",
+  "finished_at": "2026-11-13T02:10:15.740987+00:00",
   "pending": {}
 }

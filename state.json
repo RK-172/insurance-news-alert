@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-14T07:29:44.524396+00:00",
+      "last_success": "2026-11-14T08:23:37.977101+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-14T07:29:44.668944+00:00",
+      "last_success": "2026-11-14T08:23:38.180245+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-14T07:29:44.790591+00:00",
+      "last_success": "2026-11-14T08:23:38.251358+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-14T07:29:47.682884+00:00",
+      "last_success": "2026-11-14T08:23:41.069498+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-14T07:29:47.552733+00:00",
+      "last_success": "2026-11-14T08:23:41.042681+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-14T07:29:47.440520+00:00",
+      "last_success": "2026-11-14T08:23:40.823953+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-14T07:29:50.331191+00:00",
+      "last_success": "2026-11-14T08:23:43.745142+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -339,8 +339,8 @@
     "fss_sanction:202500126:1": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-14T07:29:41.647143+00:00",
-  "last_started_at": "2026-11-14T07:29:41.647143+00:00",
+  "checked_at": "2026-11-14T08:23:35.234084+00:00",
+  "last_started_at": "2026-11-14T08:23:35.234084+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -578,6 +578,6 @@
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500126&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-14T07:29:50.332870+00:00",
+  "finished_at": "2026-11-14T08:23:43.746871+00:00",
   "pending": {}
 }

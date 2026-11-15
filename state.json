@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-15T08:41:42.054703+00:00",
+      "last_success": "2026-11-15T09:29:21.012157+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-15T08:41:42.177111+00:00",
+      "last_success": "2026-11-15T09:29:21.223853+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-15T08:41:42.170439+00:00",
+      "last_success": "2026-11-15T09:29:21.186116+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-15T08:41:44.897497+00:00",
+      "last_success": "2026-11-15T09:29:24.249669+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-15T08:41:44.944035+00:00",
+      "last_success": "2026-11-15T09:29:24.091430+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-15T08:41:44.842908+00:00",
+      "last_success": "2026-11-15T09:29:24.050359+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-15T08:41:47.814415+00:00",
+      "last_success": "2026-11-15T09:29:27.279091+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -343,8 +343,8 @@
     "fss_press:249859": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-15T08:41:39.420121+00:00",
-  "last_started_at": "2026-11-15T08:41:39.420121+00:00",
+  "checked_at": "2026-11-15T09:29:18.015360+00:00",
+  "last_started_at": "2026-11-15T09:29:18.015360+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -592,6 +592,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249856&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-15T08:41:47.816093+00:00",
+  "finished_at": "2026-11-15T09:29:27.280870+00:00",
   "pending": {}
 }

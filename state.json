@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-15T02:17:55.980498+00:00",
+      "last_success": "2026-11-15T03:10:11.822276+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-15T02:17:56.124806+00:00",
+      "last_success": "2026-11-15T03:10:11.993892+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-15T02:17:56.170714+00:00",
+      "last_success": "2026-11-15T03:10:12.086975+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-15T02:17:58.907532+00:00",
+      "last_success": "2026-11-15T03:10:21.086021+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-15T02:17:58.804409+00:00",
+      "last_success": "2026-11-15T03:10:21.084383+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 3
     },
     "fss_explain": {
-      "last_success": "2026-11-15T02:17:58.720340+00:00",
+      "last_success": "2026-11-15T03:10:21.085270+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-15T02:18:01.570137+00:00",
+      "last_success": "2026-11-15T03:10:21.086764+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -336,11 +336,14 @@
     "fss_sanction:202500082:1": "sent",
     "fss_sanction:202500048:1": "sent",
     "fss_sanction:202400651:1": "sent",
-    "fss_sanction:202500126:1": "sent"
+    "fss_sanction:202500126:1": "sent",
+    "fss_press:249855": "sent",
+    "fss_press:249856": "sent",
+    "fss_press:249857": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-15T02:17:53.457312+00:00",
-  "last_started_at": "2026-11-15T02:17:53.457312+00:00",
+  "checked_at": "2026-11-15T03:10:08.765293+00:00",
+  "last_started_at": "2026-11-15T03:10:08.765293+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -576,8 +579,18 @@
       "sent_at": "2026-11-13T09:00:40.316685+00:00",
       "title": "한화생명보험주식회사 / 20261105",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202500126&emOpenSeq=1"
+    },
+    "fss_press:249855": {
+      "sent_at": "2026-11-15T03:10:21.681391+00:00",
+      "title": "금융소비자 중심의 금융감독 실현을 위한 제5차 금융소비자보호자문위원회 개최",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249855&menuNo=200218"
+    },
+    "fss_press:249856": {
+      "sent_at": "2026-11-15T03:10:22.148488+00:00",
+      "title": "금융감독원, 2026 세계투자자주간 실시",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249856&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-15T02:18:01.571797+00:00",
+  "finished_at": "2026-11-15T03:10:21.088171+00:00",
   "pending": {}
 }

@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-16T02:04:34.371540+00:00",
+      "last_success": "2026-11-16T02:59:32.392264+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-16T02:04:34.459051+00:00",
+      "last_success": "2026-11-16T02:59:32.620608+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-16T02:04:34.506283+00:00",
+      "last_success": "2026-11-16T02:59:32.743528+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-16T02:04:37.334514+00:00",
+      "last_success": "2026-11-16T02:59:35.854291+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-16T02:04:37.387774+00:00",
+      "last_success": "2026-11-16T02:59:35.678362+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-16T02:04:37.279582+00:00",
+      "last_success": "2026-11-16T02:59:35.800055+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-16T02:04:40.058200+00:00",
+      "last_success": "2026-11-16T02:59:38.813616+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -347,8 +347,8 @@
     "fss_press:249862": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-16T02:04:31.264939+00:00",
-  "last_started_at": "2026-11-16T02:04:31.264939+00:00",
+  "checked_at": "2026-11-16T02:59:29.444913+00:00",
+  "last_started_at": "2026-11-16T02:59:29.444913+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -616,6 +616,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249862&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-16T02:04:40.059581+00:00",
+  "finished_at": "2026-11-16T02:59:38.814661+00:00",
   "pending": {}
 }

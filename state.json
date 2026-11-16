@@ -1,39 +1,39 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-16T09:59:07.137380+00:00",
+      "last_success": "2026-11-16T11:23:56.393567+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-16T09:59:07.294297+00:00",
+      "last_success": "2026-11-16T11:23:56.499779+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-16T09:59:07.307119+00:00",
+      "last_success": "2026-11-16T11:23:56.602001+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-16T09:59:10.437131+00:00",
+      "last_success": "2026-11-16T11:23:59.578674+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-16T09:59:10.248378+00:00",
+      "last_success": "2026-11-16T11:23:59.516679+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-16T09:59:10.395808+00:00",
+      "last_success": "2026-11-16T11:23:59.551652+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-16T09:59:16.283532+00:00",
+      "last_success": "2026-11-16T11:24:02.538264+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     }
   },
   "seen": {
@@ -350,8 +350,8 @@
     "fss_rules:4525": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-16T09:59:04.181982+00:00",
-  "last_started_at": "2026-11-16T09:59:04.181982+00:00",
+  "checked_at": "2026-11-16T11:23:53.363590+00:00",
+  "last_started_at": "2026-11-16T11:23:53.363590+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -624,6 +624,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249868&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-16T09:59:16.285174+00:00",
+  "finished_at": "2026-11-16T11:24:02.539820+00:00",
   "pending": {}
 }

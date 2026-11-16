@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-15T23:41:26.074458+00:00",
+      "last_success": "2026-11-16T00:35:28.763857+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-15T23:41:26.278232+00:00",
+      "last_success": "2026-11-16T00:35:35.071215+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 2
     },
     "fsc_rules": {
-      "last_success": "2026-11-15T23:41:26.448726+00:00",
+      "last_success": "2026-11-16T00:35:28.852255+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-15T23:41:28.613679+00:00",
+      "last_success": "2026-11-16T00:35:35.073459+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-15T23:41:28.593482+00:00",
+      "last_success": "2026-11-16T00:35:35.072709+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-15T23:41:28.460227+00:00",
+      "last_success": "2026-11-16T00:35:35.072007+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-15T23:41:31.076215+00:00",
+      "last_success": "2026-11-16T00:35:35.074215+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -340,11 +340,13 @@
     "fss_press:249855": "sent",
     "fss_press:249856": "sent",
     "fss_press:249857": "filtered",
-    "fss_press:249859": "filtered"
+    "fss_press:249859": "filtered",
+    "fsc_press:88150": "sent",
+    "fsc_press:88151": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-15T23:41:23.857574+00:00",
-  "last_started_at": "2026-11-15T23:41:23.857574+00:00",
+  "checked_at": "2026-11-16T00:35:25.942242+00:00",
+  "last_started_at": "2026-11-16T00:35:25.942242+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -590,8 +592,18 @@
       "sent_at": "2026-11-15T03:10:22.148488+00:00",
       "title": "금융감독원, 2026 세계투자자주간 실시",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249856&menuNo=200218"
+    },
+    "fsc_press:88150": {
+      "sent_at": "2026-11-16T00:35:35.661942+00:00",
+      "title": "불법사금융 원스톱 지원,  이제 센터 방문 없이도 신청 가능합니다.",
+      "url": "https://www.fsc.go.kr/no010101/88150"
+    },
+    "fsc_press:88151": {
+      "sent_at": "2026-11-16T00:35:36.153124+00:00",
+      "title": "이억원 금융위원장,  글로벌 금융안정 공조 및 유럽 주요 금융당국과 협력 강화 나선다",
+      "url": "https://www.fsc.go.kr/no010101/88151"
     }
   },
-  "finished_at": "2026-11-15T23:41:31.077163+00:00",
+  "finished_at": "2026-11-16T00:35:35.075616+00:00",
   "pending": {}
 }

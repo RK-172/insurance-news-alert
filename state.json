@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-16T00:35:28.763857+00:00",
+      "last_success": "2026-11-16T02:04:34.371540+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-16T00:35:35.071215+00:00",
+      "last_success": "2026-11-16T02:04:34.459051+00:00",
       "count": 10,
-      "new_count": 2
+      "new_count": 1
     },
     "fsc_rules": {
-      "last_success": "2026-11-16T00:35:28.852255+00:00",
+      "last_success": "2026-11-16T02:04:34.506283+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-16T00:35:35.073459+00:00",
+      "last_success": "2026-11-16T02:04:37.334514+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-16T00:35:35.072709+00:00",
+      "last_success": "2026-11-16T02:04:37.387774+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-16T00:35:35.072007+00:00",
+      "last_success": "2026-11-16T02:04:37.279582+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-16T00:35:35.074215+00:00",
+      "last_success": "2026-11-16T02:04:40.058200+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -342,11 +342,13 @@
     "fss_press:249857": "filtered",
     "fss_press:249859": "filtered",
     "fsc_press:88150": "sent",
-    "fsc_press:88151": "sent"
+    "fsc_press:88151": "sent",
+    "fsc_press:88152": "sent",
+    "fss_press:249862": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-16T00:35:25.942242+00:00",
-  "last_started_at": "2026-11-16T00:35:25.942242+00:00",
+  "checked_at": "2026-11-16T02:04:31.264939+00:00",
+  "last_started_at": "2026-11-16T02:04:31.264939+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -602,8 +604,18 @@
       "sent_at": "2026-11-16T00:35:36.153124+00:00",
       "title": "이억원 금융위원장,  글로벌 금융안정 공조 및 유럽 주요 금융당국과 협력 강화 나선다",
       "url": "https://www.fsc.go.kr/no010101/88151"
+    },
+    "fsc_press:88152": {
+      "sent_at": "2026-11-16T02:04:41.295161+00:00",
+      "title": "정부는 최근 발생한 금융보안원의 침해사고와 관련하여 철저한 원인조사 및 재발방지 대책 마련을 지시하였습니다.",
+      "url": "https://www.fsc.go.kr/no010101/88152"
+    },
+    "fss_press:249862": {
+      "sent_at": "2026-11-16T02:04:41.770123+00:00",
+      "title": "정부는 최근 발생한 금융보안원의 침해사고와 관련하여 철저한 원인조사 및 재발방지 대책 마련을 지시하였습니다.",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249862&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-16T00:35:35.075616+00:00",
+  "finished_at": "2026-11-16T02:04:40.059581+00:00",
   "pending": {}
 }

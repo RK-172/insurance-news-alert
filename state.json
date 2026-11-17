@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-17T11:36:48.896187+00:00",
+      "last_success": "2026-11-17T21:48:32.602047+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-17T11:36:49.160100+00:00",
+      "last_success": "2026-11-17T21:48:32.770130+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-17T11:36:49.148032+00:00",
+      "last_success": "2026-11-17T21:48:32.630906+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-17T11:36:52.104024+00:00",
+      "last_success": "2026-11-17T21:48:37.351420+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-17T11:36:52.003984+00:00",
+      "last_success": "2026-11-17T21:48:37.350510+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-17T11:36:52.077046+00:00",
+      "last_success": "2026-11-17T21:48:34.881269+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-17T11:36:55.250321+00:00",
+      "last_success": "2026-11-17T21:48:37.448553+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -354,11 +354,12 @@
     "fsc_press:88160": "filtered",
     "fss_press:249890": "filtered",
     "fss_sanction:202300806:1": "sent",
-    "fss_explain:249896": "sent"
+    "fss_explain:249896": "sent",
+    "fss_press:249899": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-17T11:36:45.868568+00:00",
-  "last_started_at": "2026-11-17T11:36:45.868568+00:00",
+  "checked_at": "2026-11-17T21:48:30.295539+00:00",
+  "last_started_at": "2026-11-17T21:48:30.295539+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -644,8 +645,13 @@
       "sent_at": "2026-11-17T10:49:06.924314+00:00",
       "title": "\"금융행정 쇄신방안의 발표일정과 내용은 확정된 바 없습니다.\"",
       "url": "https://www.fss.or.kr/fss/bbs/B0000189/view.do?nttId=249896&menuNo=200219"
+    },
+    "fss_press:249899": {
+      "sent_at": "2026-11-17T21:48:38.180620+00:00",
+      "title": "全금융권이 상시적으로 철저하게 보안 관리에 임하도록 IT자산 식별, 관리를 의무화하고 취약점 점검, 평가 제도를 내실화하겠습니다.",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249899&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-17T11:36:55.252052+00:00",
+  "finished_at": "2026-11-17T21:48:37.450190+00:00",
   "pending": {}
 }

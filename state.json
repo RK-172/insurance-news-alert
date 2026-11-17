@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-17T06:29:04.386375+00:00",
+      "last_success": "2026-11-17T07:52:21.167301+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-17T06:29:04.675339+00:00",
+      "last_success": "2026-11-17T07:52:21.462061+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-17T06:29:04.547734+00:00",
+      "last_success": "2026-11-17T07:52:21.509010+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-17T06:29:06.745949+00:00",
+      "last_success": "2026-11-17T07:52:26.653633+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-17T06:29:10.361733+00:00",
+      "last_success": "2026-11-17T07:52:26.652248+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-17T06:29:06.590993+00:00",
+      "last_success": "2026-11-17T07:52:26.653066+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-17T06:29:11.820646+00:00",
+      "last_success": "2026-11-17T07:52:26.654253+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -351,11 +351,12 @@
     "fss_press:249882": "filtered",
     "fss_press:249883": "filtered",
     "fss_press:249888": "sent",
-    "fsc_press:88160": "filtered"
+    "fsc_press:88160": "filtered",
+    "fss_press:249890": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-17T06:29:02.297769+00:00",
-  "last_started_at": "2026-11-17T06:29:02.297769+00:00",
+  "checked_at": "2026-11-17T07:52:18.710413+00:00",
+  "last_started_at": "2026-11-17T07:52:18.710413+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -633,6 +634,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249888&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-17T06:29:11.822295+00:00",
+  "finished_at": "2026-11-17T07:52:26.656038+00:00",
   "pending": {}
 }

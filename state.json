@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-17T03:19:36.462500+00:00",
+      "last_success": "2026-11-17T04:20:28.605385+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-17T03:19:35.916624+00:00",
+      "last_success": "2026-11-17T04:20:28.794862+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-17T02:25:36.305409+00:00",
+      "last_success": "2026-11-17T04:20:28.832051+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-17T03:19:42.133817+00:00",
+      "last_success": "2026-11-17T04:20:31.730166+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-17T03:19:39.060495+00:00",
+      "last_success": "2026-11-17T04:20:31.420768+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-17T03:19:39.407416+00:00",
+      "last_success": "2026-11-17T04:20:31.706578+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-17T03:19:42.511625+00:00",
+      "last_success": "2026-11-17T04:20:34.329297+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -351,14 +351,9 @@
     "fss_press:249882": "filtered",
     "fss_press:249883": "filtered"
   },
-  "errors": {
-    "fsc_rules": {
-      "count": 1,
-      "notified": false
-    }
-  },
-  "checked_at": "2026-11-17T03:19:31.673209+00:00",
-  "last_started_at": "2026-11-17T03:19:31.673209+00:00",
+  "errors": {},
+  "checked_at": "2026-11-17T04:20:25.841431+00:00",
+  "last_started_at": "2026-11-17T04:20:25.841431+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -631,6 +626,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249868&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-17T03:19:58.152705+00:00",
+  "finished_at": "2026-11-17T04:20:34.330703+00:00",
   "pending": {}
 }

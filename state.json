@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-17T09:49:26.825061+00:00",
+      "last_success": "2026-11-17T10:49:01.511409+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-17T09:49:27.071344+00:00",
+      "last_success": "2026-11-17T10:49:01.616790+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-17T09:49:27.018624+00:00",
+      "last_success": "2026-11-17T10:49:01.684520+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-17T09:49:29.661347+00:00",
+      "last_success": "2026-11-17T10:49:03.748353+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-17T09:49:29.719855+00:00",
+      "last_success": "2026-11-17T10:49:03.704940+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-17T09:49:29.619573+00:00",
+      "last_success": "2026-11-17T10:49:03.683231+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_rules": {
-      "last_success": "2026-11-17T09:49:31.934387+00:00",
+      "last_success": "2026-11-17T10:49:06.066288+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -353,11 +353,12 @@
     "fss_press:249888": "sent",
     "fsc_press:88160": "filtered",
     "fss_press:249890": "filtered",
-    "fss_sanction:202300806:1": "sent"
+    "fss_sanction:202300806:1": "sent",
+    "fss_explain:249896": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-17T09:49:24.632203+00:00",
-  "last_started_at": "2026-11-17T09:49:24.632203+00:00",
+  "checked_at": "2026-11-17T10:48:59.329763+00:00",
+  "last_started_at": "2026-11-17T10:48:59.329763+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -638,8 +639,13 @@
       "sent_at": "2026-11-17T08:50:40.010877+00:00",
       "title": "㈜농심캐피탈 / 20261116",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202300806&emOpenSeq=1"
+    },
+    "fss_explain:249896": {
+      "sent_at": "2026-11-17T10:49:06.924314+00:00",
+      "title": "\"금융행정 쇄신방안의 발표일정과 내용은 확정된 바 없습니다.\"",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000189/view.do?nttId=249896&menuNo=200219"
     }
   },
-  "finished_at": "2026-11-17T09:49:31.936212+00:00",
+  "finished_at": "2026-11-17T10:49:06.067730+00:00",
   "pending": {}
 }

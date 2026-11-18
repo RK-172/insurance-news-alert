@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-18T00:29:03.081197+00:00",
+      "last_success": "2026-11-18T01:53:24.875507+00:00",
       "count": 10,
-      "new_count": 2
+      "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-18T00:29:05.846923+00:00",
+      "last_success": "2026-11-18T01:53:25.036758+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-18T00:29:00.681982+00:00",
+      "last_success": "2026-11-18T01:53:25.028821+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-18T00:29:09.071599+00:00",
+      "last_success": "2026-11-18T01:53:30.298709+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-18T00:29:09.070312+00:00",
+      "last_success": "2026-11-18T01:53:30.297272+00:00",
       "count": 10,
       "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-18T00:29:09.071078+00:00",
+      "last_success": "2026-11-18T01:53:30.298068+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-18T00:29:09.072100+00:00",
+      "last_success": "2026-11-18T01:53:30.299383+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -359,11 +359,12 @@
     "fsc_explain:88163": "filtered",
     "fsc_explain:88164": "sent",
     "fsc_press:88162": "sent",
-    "fss_press:249902": "filtered"
+    "fss_press:249902": "filtered",
+    "fss_press:249903": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-18T00:28:58.551578+00:00",
-  "last_started_at": "2026-11-18T00:28:58.551578+00:00",
+  "checked_at": "2026-11-18T01:53:22.110798+00:00",
+  "last_started_at": "2026-11-18T01:53:22.110798+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -666,6 +667,6 @@
       "url": "https://www.fsc.go.kr/no010101/88162"
     }
   },
-  "finished_at": "2026-11-18T00:29:09.073016+00:00",
+  "finished_at": "2026-11-18T01:53:30.301194+00:00",
   "pending": {}
 }

@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-17T23:33:35.822481+00:00",
+      "last_success": "2026-11-18T00:29:03.081197+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 2
     },
     "fsc_press": {
-      "last_success": "2026-11-17T23:33:36.069361+00:00",
+      "last_success": "2026-11-18T00:29:05.846923+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fsc_rules": {
-      "last_success": "2026-11-17T23:33:36.116592+00:00",
+      "last_success": "2026-11-18T00:29:00.681982+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-17T23:33:38.672733+00:00",
+      "last_success": "2026-11-18T00:29:09.071599+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-17T23:33:38.379183+00:00",
+      "last_success": "2026-11-18T00:29:09.070312+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-17T23:33:38.596051+00:00",
+      "last_success": "2026-11-18T00:29:09.071078+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-17T23:33:41.054941+00:00",
+      "last_success": "2026-11-18T00:29:09.072100+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -355,11 +355,15 @@
     "fss_press:249890": "filtered",
     "fss_sanction:202300806:1": "sent",
     "fss_explain:249896": "sent",
-    "fss_press:249899": "sent"
+    "fss_press:249899": "sent",
+    "fsc_explain:88163": "filtered",
+    "fsc_explain:88164": "sent",
+    "fsc_press:88162": "sent",
+    "fss_press:249902": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-17T23:33:33.362693+00:00",
-  "last_started_at": "2026-11-17T23:33:33.362693+00:00",
+  "checked_at": "2026-11-18T00:28:58.551578+00:00",
+  "last_started_at": "2026-11-18T00:28:58.551578+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -650,8 +654,18 @@
       "sent_at": "2026-11-17T21:48:38.180620+00:00",
       "title": "全금융권이 상시적으로 철저하게 보안 관리에 임하도록 IT자산 식별, 관리를 의무화하고 취약점 점검, 평가 제도를 내실화하겠습니다.",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249899&menuNo=200218"
+    },
+    "fsc_explain:88164": {
+      "sent_at": "2026-11-18T00:29:09.610040+00:00",
+      "title": "국민성장펀드의 특정 기업에 대한 자금지원과 관련하여 정해진 내용은 없습니다.",
+      "url": "https://www.fsc.go.kr/no010102/88164"
+    },
+    "fsc_press:88162": {
+      "sent_at": "2026-11-18T00:29:10.055668+00:00",
+      "title": "全금융권이 상시적으로 철저하게 보안 관리에 임하도록 IT자산 식별·관리를 의무화하고 취약점 점검·평가 제도를 내실화하겠습니다.",
+      "url": "https://www.fsc.go.kr/no010101/88162"
     }
   },
-  "finished_at": "2026-11-17T23:33:41.056626+00:00",
+  "finished_at": "2026-11-18T00:29:09.073016+00:00",
   "pending": {}
 }

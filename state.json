@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-18T02:44:27.421872+00:00",
+      "last_success": "2026-11-18T04:42:43.032176+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-18T02:44:27.442003+00:00",
+      "last_success": "2026-11-18T04:42:43.177395+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-18T02:44:27.585733+00:00",
+      "last_success": "2026-11-18T04:42:43.192145+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-18T03:40:48.146438+00:00",
+      "last_success": "2026-11-18T04:42:45.842074+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-18T03:40:48.269819+00:00",
+      "last_success": "2026-11-18T04:42:45.545978+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-18T03:40:48.120252+00:00",
+      "last_success": "2026-11-18T04:42:45.868301+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-18T03:40:51.228172+00:00",
+      "last_success": "2026-11-18T04:42:48.286813+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -363,22 +363,9 @@
     "fss_press:249903": "filtered",
     "fss_press:249905": "sent"
   },
-  "errors": {
-    "fsc_press": {
-      "count": 1,
-      "notified": false
-    },
-    "fsc_explain": {
-      "count": 1,
-      "notified": false
-    },
-    "fsc_rules": {
-      "count": 1,
-      "notified": false
-    }
-  },
-  "checked_at": "2026-11-18T03:40:18.707157+00:00",
-  "last_started_at": "2026-11-18T03:40:18.707157+00:00",
+  "errors": {},
+  "checked_at": "2026-11-18T04:42:40.522738+00:00",
+  "last_started_at": "2026-11-18T04:42:40.522738+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -686,6 +673,6 @@
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249905&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-18T03:40:51.229627+00:00",
+  "finished_at": "2026-11-18T04:42:48.288554+00:00",
   "pending": {}
 }

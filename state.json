@@ -16,22 +16,22 @@
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-18T02:44:30.276076+00:00",
+      "last_success": "2026-11-18T03:40:48.146438+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-18T02:44:30.219574+00:00",
+      "last_success": "2026-11-18T03:40:48.269819+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-18T02:44:30.248898+00:00",
+      "last_success": "2026-11-18T03:40:48.120252+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-18T02:44:33.147875+00:00",
+      "last_success": "2026-11-18T03:40:51.228172+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -360,11 +360,25 @@
     "fsc_explain:88164": "sent",
     "fsc_press:88162": "sent",
     "fss_press:249902": "filtered",
-    "fss_press:249903": "filtered"
+    "fss_press:249903": "filtered",
+    "fss_press:249905": "sent"
   },
-  "errors": {},
-  "checked_at": "2026-11-18T02:44:24.677352+00:00",
-  "last_started_at": "2026-11-18T02:44:24.677352+00:00",
+  "errors": {
+    "fsc_press": {
+      "count": 1,
+      "notified": false
+    },
+    "fsc_explain": {
+      "count": 1,
+      "notified": false
+    },
+    "fsc_rules": {
+      "count": 1,
+      "notified": false
+    }
+  },
+  "checked_at": "2026-11-18T03:40:18.707157+00:00",
+  "last_started_at": "2026-11-18T03:40:18.707157+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -665,8 +679,13 @@
       "sent_at": "2026-11-18T00:29:10.055668+00:00",
       "title": "全금융권이 상시적으로 철저하게 보안 관리에 임하도록 IT자산 식별·관리를 의무화하고 취약점 점검·평가 제도를 내실화하겠습니다.",
       "url": "https://www.fsc.go.kr/no010101/88162"
+    },
+    "fss_press:249905": {
+      "sent_at": "2026-11-18T03:40:51.907033+00:00",
+      "title": "전동킥보드로 사고 내고 음주운전 차량 표적 사고 유발까지... 자동차 보험사기, 이렇게 예방하세요",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249905&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-18T02:44:33.149926+00:00",
+  "finished_at": "2026-11-18T03:40:51.229627+00:00",
   "pending": {}
 }

@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-19T00:28:24.811751+00:00",
+      "last_success": "2026-11-19T01:51:05.003454+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-19T00:28:24.917096+00:00",
+      "last_success": "2026-11-19T01:51:05.232809+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-19T00:28:25.007002+00:00",
+      "last_success": "2026-11-19T01:51:05.261722+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-19T00:28:28.057956+00:00",
+      "last_success": "2026-11-19T01:51:07.945382+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-19T00:28:27.799223+00:00",
+      "last_success": "2026-11-19T01:51:07.695520+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-19T00:28:27.677487+00:00",
+      "last_success": "2026-11-19T01:51:07.824039+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-19T00:28:30.746598+00:00",
+      "last_success": "2026-11-19T01:51:12.312162+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -363,11 +363,12 @@
     "fss_press:249903": "filtered",
     "fss_press:249905": "sent",
     "fsc_rules:4189": "sent",
-    "fss_press:249913": "sent"
+    "fss_press:249913": "sent",
+    "fss_press:249914": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-19T00:28:21.793577+00:00",
-  "last_started_at": "2026-11-19T00:28:21.793577+00:00",
+  "checked_at": "2026-11-19T01:51:02.513213+00:00",
+  "last_started_at": "2026-11-19T01:51:02.513213+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -683,8 +684,13 @@
       "sent_at": "2026-11-18T21:47:51.956623+00:00",
       "title": "26.6월말 기준 금융회사 해외 부동산 대체투자 현황",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249913&menuNo=200218"
+    },
+    "fss_press:249914": {
+      "sent_at": "2026-11-19T01:51:12.983329+00:00",
+      "title": "금융소비자보호처장, 인천대학교 방문 교육 실시",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249914&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-19T00:28:30.748626+00:00",
+  "finished_at": "2026-11-19T01:51:12.313624+00:00",
   "pending": {}
 }

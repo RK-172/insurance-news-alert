@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-19T04:45:17.036048+00:00",
+      "last_success": "2026-11-19T05:45:46.416868+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-19T04:45:17.035127+00:00",
+      "last_success": "2026-11-19T05:45:46.736008+00:00",
       "count": 10,
       "new_count": 1
     },
     "fsc_rules": {
-      "last_success": "2026-11-19T03:39:51.585713+00:00",
+      "last_success": "2026-11-19T05:45:46.601814+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-19T04:45:17.037344+00:00",
+      "last_success": "2026-11-19T05:45:49.026041+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-19T04:45:17.036789+00:00",
+      "last_success": "2026-11-19T05:45:48.707989+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_explain": {
-      "last_success": "2026-11-19T04:45:17.037918+00:00",
+      "last_success": "2026-11-19T05:45:48.791811+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-19T04:45:17.038477+00:00",
+      "last_success": "2026-11-19T05:45:50.916963+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -367,16 +367,13 @@
     "fss_press:249914": "sent",
     "fss_press:249916": "sent",
     "fss_press:249917": "sent",
-    "fsc_press:88171": "sent"
+    "fsc_press:88171": "sent",
+    "fsc_press:88173": "sent",
+    "fss_press:249919": "sent"
   },
-  "errors": {
-    "fsc_rules": {
-      "count": 1,
-      "notified": false
-    }
-  },
-  "checked_at": "2026-11-19T04:44:37.668128+00:00",
-  "last_started_at": "2026-11-19T04:44:37.668128+00:00",
+  "errors": {},
+  "checked_at": "2026-11-19T05:45:44.230493+00:00",
+  "last_started_at": "2026-11-19T05:45:44.230493+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -712,8 +709,18 @@
       "sent_at": "2026-11-19T04:45:17.747999+00:00",
       "title": "핀테크 기업에 필요한 지원사업을 AI가 찾아드립니다.",
       "url": "https://www.fsc.go.kr/no010101/88171"
+    },
+    "fsc_press:88173": {
+      "sent_at": "2026-11-19T05:45:51.682392+00:00",
+      "title": "깜빡 잊고 지나가버린 지난 3년간 실손보험금, ‘실손24’를 통해  한방에 청구하고 받을 수 있습니다",
+      "url": "https://www.fsc.go.kr/no010101/88173"
+    },
+    "fss_press:249919": {
+      "sent_at": "2026-11-19T05:45:52.327637+00:00",
+      "title": "깜빡 잊고 지나가버린 지난 3년간 실손보험금, ‘실손24’를 통해 한방에 청구하고 받을 수 있습니다",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249919&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-19T04:45:17.040026+00:00",
+  "finished_at": "2026-11-19T05:45:50.918656+00:00",
   "pending": {}
 }

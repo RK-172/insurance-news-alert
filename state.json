@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-19T02:42:22.399625+00:00",
+      "last_success": "2026-11-19T03:39:51.313007+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-19T02:42:22.460285+00:00",
+      "last_success": "2026-11-19T03:39:51.593086+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-19T02:42:22.618757+00:00",
+      "last_success": "2026-11-19T03:39:51.585713+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-19T02:42:24.818241+00:00",
+      "last_success": "2026-11-19T03:39:53.738772+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-19T02:42:24.842453+00:00",
+      "last_success": "2026-11-19T03:39:53.869758+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 2
     },
     "fss_explain": {
-      "last_success": "2026-11-19T02:42:24.719745+00:00",
+      "last_success": "2026-11-19T03:39:53.758998+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-19T02:42:27.168982+00:00",
+      "last_success": "2026-11-19T03:39:56.008729+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -364,11 +364,13 @@
     "fss_press:249905": "sent",
     "fsc_rules:4189": "sent",
     "fss_press:249913": "sent",
-    "fss_press:249914": "sent"
+    "fss_press:249914": "sent",
+    "fss_press:249916": "sent",
+    "fss_press:249917": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-19T02:42:20.193757+00:00",
-  "last_started_at": "2026-11-19T02:42:20.193757+00:00",
+  "checked_at": "2026-11-19T03:39:49.147397+00:00",
+  "last_started_at": "2026-11-19T03:39:49.147397+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -689,8 +691,18 @@
       "sent_at": "2026-11-19T01:51:12.983329+00:00",
       "title": "금융소비자보호처장, 인천대학교 방문 교육 실시",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249914&menuNo=200218"
+    },
+    "fss_press:249916": {
+      "sent_at": "2026-11-19T03:39:56.837825+00:00",
+      "title": "저축성보험, 만기 후에도 최대 3년까지 연금으로 전환할 수 있습니다",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249916&menuNo=200218"
+    },
+    "fss_press:249917": {
+      "sent_at": "2026-11-19T03:39:57.512875+00:00",
+      "title": "금융감독원은 제8기 옴부즈만을 신규로 위촉하였습니다",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249917&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-19T02:42:27.170696+00:00",
+  "finished_at": "2026-11-19T03:39:56.009927+00:00",
   "pending": {}
 }

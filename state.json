@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-20T03:24:56.108417+00:00",
+      "last_success": "2026-11-20T04:28:48.193713+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-20T03:24:56.299377+00:00",
+      "last_success": "2026-11-20T04:28:48.489023+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-20T03:24:56.355330+00:00",
+      "last_success": "2026-11-20T04:28:48.431386+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-20T03:24:58.912401+00:00",
+      "last_success": "2026-11-20T04:28:51.021131+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 1
     },
     "fss_press": {
-      "last_success": "2026-11-20T03:24:58.867564+00:00",
+      "last_success": "2026-11-20T04:28:50.749368+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-20T03:24:58.829459+00:00",
+      "last_success": "2026-11-20T04:28:50.994965+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-20T03:25:01.515437+00:00",
+      "last_success": "2026-11-20T04:28:53.419050+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -372,11 +372,12 @@
     "fss_press:249919": "sent",
     "fss_press:249922": "sent",
     "fss_press:249931": "filtered",
-    "fss_press:249933": "filtered"
+    "fss_press:249933": "filtered",
+    "fss_sanction:202400207:5": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-20T03:24:53.417287+00:00",
-  "last_started_at": "2026-11-20T03:24:53.417287+00:00",
+  "checked_at": "2026-11-20T04:28:45.464828+00:00",
+  "last_started_at": "2026-11-20T04:28:45.464828+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -727,8 +728,13 @@
       "sent_at": "2026-11-19T06:47:47.500596+00:00",
       "title": "금융감독원, 퇴직연금 사업자 임원 간담회 개최",
       "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249922&menuNo=200218"
+    },
+    "fss_sanction:202400207:5": {
+      "sent_at": "2026-11-20T04:28:54.598560+00:00",
+      "title": "지에이코리아주식회사 / 20261111",
+      "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202400207&emOpenSeq=5"
     }
   },
-  "finished_at": "2026-11-20T03:25:01.519053+00:00",
+  "finished_at": "2026-11-20T04:28:53.420844+00:00",
   "pending": {}
 }

@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-20T04:28:48.193713+00:00",
+      "last_success": "2026-11-20T05:35:26.368027+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-20T04:28:48.489023+00:00",
+      "last_success": "2026-11-20T05:35:26.513460+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-20T04:28:48.431386+00:00",
+      "last_success": "2026-11-20T05:35:26.569261+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-20T04:28:51.021131+00:00",
+      "last_success": "2026-11-20T05:35:28.857493+00:00",
       "count": 10,
-      "new_count": 1
+      "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-20T04:28:50.749368+00:00",
+      "last_success": "2026-11-20T05:35:28.763722+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-20T04:28:50.994965+00:00",
+      "last_success": "2026-11-20T05:35:28.879223+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-20T04:28:53.419050+00:00",
+      "last_success": "2026-11-20T05:35:31.235075+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -376,8 +376,8 @@
     "fss_sanction:202400207:5": "sent"
   },
   "errors": {},
-  "checked_at": "2026-11-20T04:28:45.464828+00:00",
-  "last_started_at": "2026-11-20T04:28:45.464828+00:00",
+  "checked_at": "2026-11-20T05:35:24.042816+00:00",
+  "last_started_at": "2026-11-20T05:35:24.042816+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -735,6 +735,6 @@
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202400207&emOpenSeq=5"
     }
   },
-  "finished_at": "2026-11-20T04:28:53.420844+00:00",
+  "finished_at": "2026-11-20T05:35:31.236430+00:00",
   "pending": {}
 }

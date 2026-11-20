@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-20T11:03:19.748997+00:00",
+      "last_success": "2026-11-20T21:43:14.693408+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-20T11:03:19.889032+00:00",
+      "last_success": "2026-11-20T21:43:14.835569+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-20T11:03:19.979938+00:00",
+      "last_success": "2026-11-20T21:43:14.852239+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-20T12:00:28.880805+00:00",
+      "last_success": "2026-11-20T21:43:16.941036+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-20T12:00:28.965946+00:00",
+      "last_success": "2026-11-20T21:43:16.988669+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_explain": {
-      "last_success": "2026-11-20T12:00:28.851810+00:00",
+      "last_success": "2026-11-20T21:43:16.904857+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-20T12:00:31.473392+00:00",
+      "last_success": "2026-11-20T21:43:19.177993+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -382,22 +382,9 @@
     "fss_sanction:202400624:1": "sent",
     "fss_sanction:202400547:1": "sent"
   },
-  "errors": {
-    "fsc_rules": {
-      "count": 1,
-      "notified": false
-    },
-    "fsc_explain": {
-      "count": 1,
-      "notified": false
-    },
-    "fsc_press": {
-      "count": 1,
-      "notified": false
-    }
-  },
-  "checked_at": "2026-11-20T11:59:59.900205+00:00",
-  "last_started_at": "2026-11-20T11:59:59.900205+00:00",
+  "errors": {},
+  "checked_at": "2026-11-20T21:43:12.430541+00:00",
+  "last_started_at": "2026-11-20T21:43:12.430541+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -790,6 +777,6 @@
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202400547&emOpenSeq=1"
     }
   },
-  "finished_at": "2026-11-20T12:00:31.480378+00:00",
+  "finished_at": "2026-11-20T21:43:19.179627+00:00",
   "pending": {}
 }

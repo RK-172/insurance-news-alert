@@ -1,37 +1,37 @@
 {
   "sources": {
     "fsc_explain": {
-      "last_success": "2026-11-22T02:37:34.633620+00:00",
+      "last_success": "2026-11-22T03:33:33.386269+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_press": {
-      "last_success": "2026-11-22T02:37:34.781417+00:00",
+      "last_success": "2026-11-22T03:33:33.535229+00:00",
       "count": 10,
       "new_count": 0
     },
     "fsc_rules": {
-      "last_success": "2026-11-22T02:37:34.807083+00:00",
+      "last_success": "2026-11-22T03:33:33.606841+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_sanction": {
-      "last_success": "2026-11-22T02:37:37.512006+00:00",
+      "last_success": "2026-11-22T03:33:42.728055+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_press": {
-      "last_success": "2026-11-22T02:37:37.349975+00:00",
+      "last_success": "2026-11-22T03:33:42.727080+00:00",
       "count": 10,
-      "new_count": 0
+      "new_count": 2
     },
     "fss_explain": {
-      "last_success": "2026-11-22T02:37:37.278729+00:00",
+      "last_success": "2026-11-22T03:33:36.417326+00:00",
       "count": 10,
       "new_count": 0
     },
     "fss_rules": {
-      "last_success": "2026-11-22T02:37:39.954833+00:00",
+      "last_success": "2026-11-22T03:33:42.729044+00:00",
       "count": 10,
       "new_count": 0
     }
@@ -380,11 +380,13 @@
     "fss_sanction:202500469:1": "sent",
     "fss_sanction:202500518:1": "sent",
     "fss_sanction:202400624:1": "sent",
-    "fss_sanction:202400547:1": "sent"
+    "fss_sanction:202400547:1": "sent",
+    "fss_press:249945": "sent",
+    "fss_press:249944": "filtered"
   },
   "errors": {},
-  "checked_at": "2026-11-22T02:37:32.134170+00:00",
-  "last_started_at": "2026-11-22T02:37:32.134170+00:00",
+  "checked_at": "2026-11-22T03:33:30.475476+00:00",
+  "last_started_at": "2026-11-22T03:33:30.475476+00:00",
   "notifications": {
     "fsc_press:88081": {
       "sent_at": "2026-11-04T07:11:47.477809+00:00",
@@ -775,8 +777,13 @@
       "sent_at": "2026-11-20T08:59:36.420694+00:00",
       "title": "삼성화재해상보험주식회사 / 20261119",
       "url": "https://www.fss.or.kr/fss/job/openInfo/view.do?menuNo=200476&examMgmtNo=202400547&emOpenSeq=1"
+    },
+    "fss_press:249945": {
+      "sent_at": "2026-11-22T03:33:43.808486+00:00",
+      "title": "카카오페이,토스,네이버페이에서도 '주민등록증 진위확인' 가능... 전자금융거래 안전성 강화",
+      "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=249945&menuNo=200218"
     }
   },
-  "finished_at": "2026-11-22T02:37:39.956261+00:00",
+  "finished_at": "2026-11-22T03:33:42.730686+00:00",
   "pending": {}
 }
